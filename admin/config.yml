@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: OWNER/REPO          # <-- se completează cu utilizator/nume-repo după ce creăm repo-ul pe GitHub
+  repo: catalinasuteu-lang/myhistamate-site
   branch: main
 
 # Limba interfeței + commit messages prietenoase
