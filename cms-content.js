@@ -27,6 +27,11 @@
         el.innerHTML = render(data[key]);
       }
     });
+    // Leagă fișierul PDF al fiecărui ghid (dacă a fost urcat din panou)
+    document.querySelectorAll('[data-pdf-key]').forEach(function (el) {
+      var key = el.getAttribute('data-pdf-key');
+      if (data[key]) el.setAttribute('data-pdf', data[key]);
+    });
   }
   fetch('content.json', { cache: 'no-store' })
     .then(function (r) { return r.ok ? r.json() : null; })

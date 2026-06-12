@@ -52,10 +52,13 @@ collections:
           - { label: "Resurse · subtitlu", name: res_lead, widget: text }
           - { label: "Ghid 1 · titlu", name: guide_1_title, widget: string }
           - { label: "Ghid 1 · text", name: guide_1_text, widget: text }
+          - { label: "Ghid 1 · fișier PDF (lasă gol până e gata)", name: guide_1_pdf, widget: file, required: false }
           - { label: "Ghid 2 · titlu", name: guide_2_title, widget: string }
           - { label: "Ghid 2 · text", name: guide_2_text, widget: text }
+          - { label: "Ghid 2 · fișier PDF (lasă gol până e gata)", name: guide_2_pdf, widget: file, required: false }
           - { label: "Ghid 3 · titlu", name: guide_3_title, widget: string }
           - { label: "Ghid 3 · text", name: guide_3_text, widget: text }
+          - { label: "Ghid 3 · fișier PDF (lasă gol până e gata)", name: guide_3_pdf, widget: file, required: false }
 
           # ---- NEWSLETTER ----
           - { label: "Newsletter · titlu", name: nl_title, widget: text }

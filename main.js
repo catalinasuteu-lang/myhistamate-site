@@ -92,13 +92,18 @@
     const dlField = $('#dlForm .field');
     const dlSuccess = $('#dlSuccess');
     const dlInput = $('#dlEmail');
+    const dlDownload = $('#dlDownload');
+    let currentPdf = '';
 
-    function openModal(title) {
+    function openModal(btn) {
+      const title = btn.dataset.title;
+      currentPdf = btn.dataset.pdf || '';
       dlTitle.textContent = title;
       dlGuide.value = title;
       dlField.style.display = '';
       dlField.classList.remove('invalid');
       dlSuccess.hidden = true;
+      dlDownload.hidden = true;
       dlInput.value = '';
       modal.hidden = false;
       document.body.style.overflow = 'hidden';
@@ -106,7 +111,7 @@
     }
     function closeModal() { modal.hidden = true; document.body.style.overflow = ''; }
 
-    $$('.res-dl').forEach((b) => b.addEventListener('click', () => openModal(b.dataset.title)));
+    $$('.res-dl').forEach((b) => b.addEventListener('click', () => openModal(b)));
     $('#dlClose').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
@@ -116,6 +121,15 @@
       if (!isEmail(dlInput.value)) { dlField.classList.add('invalid'); dlInput.focus(); return; }
       submitToNetlify(dlForm);
       dlField.style.display = 'none';
+      if (currentPdf) {
+        dlSuccess.textContent = 'Gata! Apasă mai jos ca să deschizi ghidul. 📨';
+        dlDownload.href = currentPdf;
+        dlDownload.setAttribute('download', '');
+        dlDownload.hidden = false;
+      } else {
+        dlSuccess.textContent = 'Gata! Ți-am notat emailul — îți trimit ghidul foarte curând. 💛';
+        dlDownload.hidden = true;
+      }
       dlSuccess.hidden = false;
     });
     dlInput.addEventListener('input', () => dlField.classList.remove('invalid'));
