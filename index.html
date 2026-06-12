@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyHistamate — locul unde pun tot ce am învățat despre HIT</title>
+<meta name="description" content="Conținut practic și uman despre viața cu intoleranță la histamină (HIT). Scris la persoana 1 de Cătălina. Ghiduri gratuite, newsletter săptămânal și, în curând, o aplicație.">
+<meta name="theme-color" content="#F7F4F0">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MyHistamate — viața cu intoleranță la histamină, pe înțelesul tău">
+<meta property="og:description" content="Lucruri practice despre HIT, scrise la persoana 1. Ghiduri gratuite, newsletter și o aplicație în curând.">
+<meta property="og:image" content="brand/web/icon-512.png">
+<meta property="og:locale" content="ro_RO">
+
+<link rel="icon" type="image/svg+xml" href="brand/web/favicon.svg">
+<link rel="alternate icon" href="brand/web/favicon-32.png">
+<link rel="apple-touch-icon" href="brand/web/apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-hero="split" data-density="comfy">
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a class="logo" href="#top" aria-label="MyHistamate — acasă">
+      <span class="logo-mark">
+        <svg viewBox="0 0 40 40" width="100%" height="100%" aria-hidden="true">
+          <defs><clipPath id="lvlHead"><circle cx="20" cy="20" r="13"/></clipPath></defs>
+          <g clip-path="url(#lvlHead)">
+            <rect x="6" y="22" width="28" height="14" fill="#E8603C"/>
+            <rect x="6" y="20.5" width="28" height="1.6" fill="#1A2E3B" opacity="0.85"/>
+          </g>
+          <circle cx="20" cy="20" r="17" fill="none" stroke="#1A2E3B" stroke-width="2.4"/>
+        </svg>
+      </span>
+      <span class="logo-text">My<span class="hl">Hista</span>mate</span>
+    </a>
+    <nav class="nav-links" aria-label="Navigație principală">
+      <a href="#poveste">Povestea</a>
+      <a href="#gasesti">Ce găsești</a>
+      <a href="#resurse">Resurse</a>
+      <a href="#despre">Despre</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#newsletter" class="btn btn-primary nav-cta">Primește ghidurile <span class="arrow">→</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Meniu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#poveste">Povestea</a>
+  <a href="#gasesti">Ce găsești</a>
+  <a href="#resurse">Resurse</a>
+  <a href="#despre">Despre</a>
+  <a href="#blog">Blog</a>
+  <a href="#newsletter" class="btn btn-primary">Primește ghidurile →</a>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero-zone" aria-label="Introducere">
+    <div class="hero hero--split container">
+      <div class="hero-copy">
+        <p class="eyebrow reveal" data-cms="hero_eyebrow">Conținut &amp; comunitate pentru intoleranța la histamină</p>
+        <h1 class="hero-title reveal" style="color:#000" data-cms="hero_title">Trăiești cu <span class="coral">intoleranță la histamină</span>? Nici eu nu știam ce am până de curând.</h1>
+        <div class="divider reveal" style="margin:30px 0 26px"></div>
+        <p class="lead hero-sub reveal" data-cms="hero_lead">Sunt Cătălina. Am intoleranță la histamină și am petrecut luni întregi încercând să înțeleg ce se întâmplă cu corpul meu. MyHistamate e locul unde pun tot ce am învățat — nu ca să te învăț eu, ci pentru că mi-ar fi prins bine să existe când am început.</p>
+        <div class="hero-actions reveal">
+          <a href="#newsletter" class="btn btn-primary">Vreau să primesc ce înveți <span class="arrow">→</span></a>
+          <a href="#poveste" class="btn btn-ghost">Citește povestea</a>
+        </div>
+        <ul class="hero-pills reveal">
+          <li data-cms="hero_pill_1">Scris la persoana 1</li>
+          <li data-cms="hero_pill_2">Practic, nu medical</li>
+          <li data-cms="hero_pill_3">Gratuit</li>
+        </ul>
+      </div>
+      <div class="hero-media reveal">
+        <img class="hero-photo" src="assets/catalina-hero.jpg" alt="Cătălina, fondatoarea MyHistamate" width="778" height="1024">
+        <div class="hero-media-tag">Cătălina · fondatoare MyHistamate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POVESTEA ============ -->
+  <section class="section story" id="poveste">
+    <div class="container story-grid">
+      <div class="story-aside reveal">
+        <p class="eyebrow">Povestea</p>
+        <div class="story-portrait">
+          <img src="assets/catalina-story.jpg" alt="Mâini tăind legume proaspete în bucătărie" width="900" height="714">
+        </div>
+        <p class="story-sign">Nu sunt medic. Nu sunt nutriționist.<br><strong>Sunt o persoană cu HIT.</strong></p>
+      </div>
+      <div class="story-body">
+        <h2 class="reveal" data-cms="story_title">Timp de aproape un an am crezut că e stresul. Că mănânc prost. Că nu dorm bine.</h2>
+        <p class="reveal" data-cms="story_p1">Mâncărimi fără explicație. Migrene care nu cedau la nimic zile întregi. Oboseală care nu trecea indiferent cât dormeam. Și momente în care eram și epuizată și cu creierul în priză în același timp — are un nume: <em>Wired and Tired</em>. Și e histamină în creier, nu anxietate.</p>
+        <p class="reveal" data-cms="story_p2">Diagnosticul cu intoleranță la histamină a venit cu ușurare și cu frustrare în același timp. Ușurare că există o explicație. Frustrare că nu există aproape niciun instrument practic care să te ajute să o gestionezi în viața reală — la restaurant, în vacanță, în zilele proaste hormonale.</p>
+        <p class="reveal" data-cms="story_p3">Așa a apărut MyHistamate. Nu dintr-o idee de business, ci dintr-o nevoie reală pe care o trăiesc în fiecare zi.</p>
+        <blockquote class="reveal" data-cms="story_quote">Sunt o persoană cu HIT care a învățat enorm din propria experiență și care vrea să facă drumul mai ușor pentru altcineva.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CE GĂSEȘTI AICI ============ -->
+  <section class="section finds" id="gasesti">
+    <div class="container">
+      <div class="finds-head reveal">
+        <p class="eyebrow">Ce găsești aici</p>
+        <h2 data-cms="finds_title">Nu sfaturi medicale. Nu liste interminabile de alimente interzise.</h2>
+        <p class="lead" data-cms="finds_lead">Ci lucruri practice pe care le-am testat eu și care fac diferența în viața de zi cu zi cu HIT.</p>
+      </div>
+      <div class="finds-grid">
+        <article class="card find-card reveal">
+          <span class="find-ic">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="20" cy="20" r="13"/><circle cx="20" cy="20" r="6"/></svg>
+          </span>
+          <h3 data-cms="find_1_title">Rețete și idei de mâncare</h3>
+          <p data-cms="find_1_text">Ce poți comanda la restaurant, ce gătești rapid acasă, cum călătorești fără să îți fie frică de meniu.</p>
+        </article>
+        <article class="card find-card reveal">
+          <span class="find-ic">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20h6l3-8 5 16 3-8h8"/></svg>
+          </span>
+          <h3 data-cms="find_2_title">Simptome și pattern-uri</h3>
+          <p data-cms="find_2_text">Cum înțelegi ce se întâmplă în corpul tău, de ce unele zile sunt mai grele decât altele.</p>
+        </article>
+        <article class="card find-card reveal">
+          <span class="find-ic">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M26 21a8 8 0 1 1-9-9 6.5 6.5 0 0 0 9 9z"/></svg>
+          </span>
+          <h3 data-cms="find_3_title">Stil de viață</h3>
+          <p data-cms="find_3_text">Stres, somn, ciclu hormonal, efort fizic și legătura lor cu histamina.</p>
+        </article>
+        <article class="card find-card reveal">
+          <span class="find-ic">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="14" r="4"/><circle cx="26" cy="26" r="4"/><path d="M17 17l6 6M26 11l3 3-3 3"/></svg>
+          </span>
+          <h3 data-cms="find_4_title">Instrumente practice</h3>
+          <p data-cms="find_4_text">Ghiduri descărcabile gratuit și, în curând, o aplicație care face munca în locul tău.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESURSE GRATUITE ============ -->
+  <section class="section resources" id="resurse">
+    <div class="container">
+      <div class="finds-head reveal">
+        <p class="eyebrow">Resurse gratuite</p>
+        <h2 data-cms="res_title">Am scris ghidurile pe care mi le-aș fi dorit la început.</h2>
+        <p class="lead" data-cms="res_lead">Le descarci gratuit, fără complicații. Lași un email și îți trimit PDF-ul.</p>
+      </div>
+      <div class="res-grid">
+        <article class="card res-card reveal">
+          <div class="res-cover" data-cover="restaurant">
+            <span class="res-cover-num">01</span>
+            <span class="res-cover-kicker">Ghid PDF</span>
+          </div>
+          <div class="res-body">
+            <h3 data-cms="guide_1_title">Ghidul restaurantului cu HIT</h3>
+            <p data-cms="guide_1_text">Cum citești un meniu, ce întrebări pui, ce comanzi în siguranță.</p>
+            <button class="btn btn-outline res-dl" data-title="Ghidul restaurantului cu HIT">Descarcă gratuit <span class="arrow">↓</span></button>
+          </div>
+        </article>
+        <article class="card res-card reveal">
+          <div class="res-cover" data-cover="week">
+            <span class="res-cover-num">02</span>
+            <span class="res-cover-kicker">Ghid PDF</span>
+          </div>
+          <div class="res-body">
+            <h3 data-cms="guide_2_title">Prima săptămână după diagnostic</h3>
+            <p data-cms="guide_2_text">Ce faci când tocmai ai aflat că ai HIT. Pas cu pas, fără panică.</p>
+            <button class="btn btn-outline res-dl" data-title="Prima săptămână după diagnostic">Descarcă gratuit <span class="arrow">↓</span></button>
+          </div>
+        </article>
+        <article class="card res-card reveal">
+          <div class="res-cover" data-cover="bucket">
+            <span class="res-cover-num">03</span>
+            <span class="res-cover-kicker">Ghid PDF</span>
+          </div>
+          <div class="res-body">
+            <h3 data-cms="guide_3_title">Găleata de histamină explicată simplu</h3>
+            <p data-cms="guide_3_text">Cel mai important concept, explicat cum mi-aș fi dorit să mi-l explice cineva mie.</p>
+            <button class="btn btn-outline res-dl" data-title="Găleata de histamină explicată simplu">Descarcă gratuit <span class="arrow">↓</span></button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="section newsletter" id="newsletter">
+    <div class="container nl-card reveal">
+      <div class="nl-inner">
+        <p class="eyebrow">Newsletter</p>
+        <h2 data-cms="nl_title">O dată pe săptămână îți trimit ce am învățat.</h2>
+        <p class="lead" data-cms="nl_lead">Ce a funcționat, ce nu, ce am descoperit nou. Fără spam, fără vânzări. Doar lucruri utile de la o persoană care trăiește cu HIT în fiecare zi.</p>
+        <form class="nl-form" id="nlForm" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="newsletter">
+          <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
+          <div class="field">
+            <input type="email" id="nlEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
+            <button type="submit" class="btn btn-primary">Mă abonez <span class="arrow">→</span></button>
+          </div>
+          <p class="nl-note">Te poți dezabona oricând. Citește <a href="#">politica de confidențialitate</a>.</p>
+          <p class="form-success" id="nlSuccess" hidden>Gata! Verifică-ți inboxul — ți-am trimis un email de confirmare. 🙌</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANUNȚ APLICAȚIE ============ -->
+  <section class="section app" id="app">
+    <div class="container app-grid">
+      <div class="app-copy reveal">
+        <p class="eyebrow">În curând · aplicația MyHistamate</p>
+        <h2 data-cms="app_title">Lucrez la ceva mai mare.</h2>
+        <p class="lead" data-cms="app_lead">Construiesc o aplicație care face tot ce fac eu manual acum — jurnal zilnic, analiză meniu restaurant în timp real, corelații între ce mănânci și cum te simți.</p>
+        <p data-cms="app_line">Nu e gata încă. Dar dacă vrei să fii printre primii care o testează:</p>
+        <form class="app-form" id="appForm" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="waitlist">
+          <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
+          <div class="field">
+            <input type="email" id="appEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
+            <button type="submit" class="btn btn-primary">Înscrie-te pe lista de așteptare <span class="arrow">→</span></button>
+          </div>
+          <p class="form-success" id="appSuccess" hidden>Ești pe listă! Te anunț prima când deschidem testarea. 💛</p>
+        </form>
+        <ul class="app-feats">
+          <li>
+            <span>
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="11" y="8" width="18" height="24" rx="2"/><path d="M16 14h8M16 20h8M16 26h5"/></svg>
+            </span> Jurnal zilnic de simptome
+          </li>
+          <li>
+            <span>
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="22" height="22" rx="3"/><path d="M9 20h22"/></svg>
+            </span> Analiză meniu restaurant
+          </li>
+          <li>
+            <span>
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 23l6-6M15 19l-3 3a4 4 0 0 0 6 6l3-3M25 21l3-3a4 4 0 0 0-6-6l-3 3"/></svg>
+            </span> Corelații mâncare–simptome
+          </li>
+        </ul>
+      </div>
+      <div class="app-mockup reveal">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="img-slot" data-label="Screenshot aplicație (mockup)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="despre">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="#top">
+        <span class="logo-mark">
+          <svg viewBox="0 0 40 40" width="100%" height="100%" aria-hidden="true">
+            <defs><clipPath id="lvlFoot"><circle cx="20" cy="20" r="13"/></clipPath></defs>
+            <g clip-path="url(#lvlFoot)">
+              <rect x="6" y="22" width="28" height="14" fill="#E8603C"/>
+              <rect x="6" y="20.5" width="28" height="1.6" fill="#FFFFFF" opacity="0.85"/>
+            </g>
+            <circle cx="20" cy="20" r="17" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+          </svg>
+        </span>
+        <span class="logo-text" style="color:#fff">My<span class="hl">Hista</span>mate</span>
+      </a>
+      <p class="footer-tag" data-cms="footer_tagline">Locul unde pun tot ce am învățat despre viața cu intoleranță la histamină — practic, uman, fără jargon.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <span class="dot">·</span>
+        <a href="#" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+    <nav class="footer-col">
+      <h4>Site</h4>
+      <a href="#poveste">Povestea</a>
+      <a href="#gasesti">Ce găsești</a>
+      <a href="#resurse">Resurse</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <nav class="footer-col">
+      <h4>Resurse</h4>
+      <a href="#resurse">Ghidul restaurantului</a>
+      <a href="#resurse">Prima săptămână</a>
+      <a href="#resurse">Găleata de histamină</a>
+    </nav>
+    <div class="footer-col">
+      <h4>În curând</h4>
+      <p class="footer-app">MyHistamate App<br><span>iOS &amp; Android · jurnal + analiză meniu</span></p>
+      <a href="#app" class="btn btn-outline btn-foot">Lista de așteptare →</a>
+    </div>
+  </div>
+  <div class="container footer-legal">
+    <p class="disclaimer"><strong>MyHistamate nu oferă sfaturi medicale.</strong> Conținutul de pe acest site reflectă experiența personală a autoarei și nu înlocuiește consultul unui medic specialist.</p>
+    <p class="copyr">© 2026 MyHistamate · myhistamate.ro · myhistamate.com</p>
+  </div>
+</footer>
+
+<!-- ============ DOWNLOAD MODAL ============ -->
+<div class="modal-overlay" id="dlModal" hidden>
+  <div class="modal card" role="dialog" aria-modal="true" aria-labelledby="dlTitle">
+    <button class="modal-close" id="dlClose" aria-label="Închide">×</button>
+    <p class="eyebrow">Ghid gratuit</p>
+    <h3 id="dlTitle">Ghidul</h3>
+    <p>Lasă-mi adresa de email și îți trimit PDF-ul direct în inbox. Primești și newsletterul săptămânal (te dezabonezi oricând).</p>
+    <form id="dlForm" name="guide-download" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="guide-download">
+      <input type="hidden" name="guide" id="dlGuide" value="">
+      <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
+      <div class="field">
+        <input type="email" id="dlEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
+        <button type="submit" class="btn btn-primary">Trimite-mi ghidul <span class="arrow">→</span></button>
+      </div>
+      <p class="form-success" id="dlSuccess" hidden>Perfect! Ți-am trimis ghidul pe email. 📨</p>
+    </form>
+  </div>
+</div>
+
+<script src="cms-content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

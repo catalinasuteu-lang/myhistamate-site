@@ -1,0 +1,10 @@
+# Note interne / ghiduri — rămân local, nu se publică
+BRIEF-POZE.md
+PROMPTURI-CHATGPT-POZE.md
+GHID-EDITARE-TEXTE.md
+GHID-DEPLOY.md
+SETUP-PANOU-EDITARE.md
+
+# Sistem
+.DS_Store
+Thumbs.db

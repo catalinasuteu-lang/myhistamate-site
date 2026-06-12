@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="MyHistamate">
+  <g>
+    <defs><clipPath id="clipd"><circle cx="20" cy="20" r="13"></circle></clipPath></defs>
+    <g clip-path="url(#clipd)">
+      <rect x="6" y="22" width="28" height="14" fill="#E8603C"></rect>
+      <rect x="6" y="20.5" width="28" height="1.6" fill="#FFFFFF" opacity="0.85"></rect>
+    </g>
+    <circle cx="20" cy="20" r="17" fill="none" stroke="#FFFFFF" stroke-width="2.4"></circle>
+  </g>
+</svg>

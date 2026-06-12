@@ -1,0 +1,70 @@
+backend:
+  name: github
+  repo: OWNER/REPO          # <-- se completează cu utilizator/nume-repo după ce creăm repo-ul pe GitHub
+  branch: main
+
+# Limba interfeței + commit messages prietenoase
+locale: ro
+publish_mode: simple
+
+media_folder: assets
+public_folder: /assets
+
+collections:
+  - name: continut
+    label: "Conținutul site-ului"
+    description: "Editezi textele paginii. Designul nu se schimbă de aici."
+    files:
+      - name: homepage
+        label: "Pagina principală"
+        file: content.json
+        description: "Sfat: pune ** în jurul cuvintelor pe care le vrei portocalii. Ex: **intoleranță la histamină**"
+        fields:
+          # ---- HERO ----
+          - { label: "Hero · text mic de sus", name: hero_eyebrow, widget: string }
+          - { label: "Hero · titlu mare (** = portocaliu)", name: hero_title, widget: text }
+          - { label: "Hero · paragraf de prezentare", name: hero_lead, widget: text }
+          - { label: "Hero · pastila 1", name: hero_pill_1, widget: string }
+          - { label: "Hero · pastila 2", name: hero_pill_2, widget: string }
+          - { label: "Hero · pastila 3", name: hero_pill_3, widget: string }
+
+          # ---- POVESTEA ----
+          - { label: "Povestea · titlu", name: story_title, widget: text }
+          - { label: "Povestea · paragraf 1 (* = italic)", name: story_p1, widget: text }
+          - { label: "Povestea · paragraf 2", name: story_p2, widget: text }
+          - { label: "Povestea · paragraf 3", name: story_p3, widget: text }
+          - { label: "Povestea · citat evidențiat", name: story_quote, widget: text }
+
+          # ---- CE GĂSEȘTI ----
+          - { label: "Ce găsești · titlu", name: finds_title, widget: text }
+          - { label: "Ce găsești · subtitlu", name: finds_lead, widget: text }
+          - { label: "Card 1 · titlu", name: find_1_title, widget: string }
+          - { label: "Card 1 · text", name: find_1_text, widget: text }
+          - { label: "Card 2 · titlu", name: find_2_title, widget: string }
+          - { label: "Card 2 · text", name: find_2_text, widget: text }
+          - { label: "Card 3 · titlu", name: find_3_title, widget: string }
+          - { label: "Card 3 · text", name: find_3_text, widget: text }
+          - { label: "Card 4 · titlu", name: find_4_title, widget: string }
+          - { label: "Card 4 · text", name: find_4_text, widget: text }
+
+          # ---- RESURSE ----
+          - { label: "Resurse · titlu", name: res_title, widget: text }
+          - { label: "Resurse · subtitlu", name: res_lead, widget: text }
+          - { label: "Ghid 1 · titlu", name: guide_1_title, widget: string }
+          - { label: "Ghid 1 · text", name: guide_1_text, widget: text }
+          - { label: "Ghid 2 · titlu", name: guide_2_title, widget: string }
+          - { label: "Ghid 2 · text", name: guide_2_text, widget: text }
+          - { label: "Ghid 3 · titlu", name: guide_3_title, widget: string }
+          - { label: "Ghid 3 · text", name: guide_3_text, widget: text }
+
+          # ---- NEWSLETTER ----
+          - { label: "Newsletter · titlu", name: nl_title, widget: text }
+          - { label: "Newsletter · text", name: nl_lead, widget: text }
+
+          # ---- APLICAȚIE ----
+          - { label: "Aplicație · titlu", name: app_title, widget: text }
+          - { label: "Aplicație · text", name: app_lead, widget: text }
+          - { label: "Aplicație · linia dinainte de formular", name: app_line, widget: text }
+
+          # ---- FOOTER ----
+          - { label: "Footer · descriere", name: footer_tagline, widget: text }
