@@ -75,7 +75,7 @@
     <div class="container">
       <div class="blog-grid">
 
-        <a class="card post-card reveal" href="/blog/meniu-restaurant.html">
+        <a class="card post-card reveal" data-cat="retete" href="/blog/meniu-restaurant.html">
           <div class="post-cover is-gradient cov-teal"><span class="post-meta" style="color:#fff">Ghid practic</span></div>
           <div class="post-body">
             <span class="post-meta">14 iunie 2026</span>
@@ -85,7 +85,7 @@
           </div>
         </a>
 
-        <a class="card post-card reveal" href="/blog/zile-proaste.html">
+        <a class="card post-card reveal" data-cat="simptome" href="/blog/zile-proaste.html">
           <div class="post-cover is-gradient cov-coral"><span class="post-meta" style="color:#fff">Din experiență</span></div>
           <div class="post-body">
             <span class="post-meta">14 iunie 2026</span>
@@ -150,5 +150,41 @@
 </footer>
 
 <script src="/main.js"></script>
+<script>
+/* Filtrare articole pe categorie (din /blog.html?cat=...) */
+(function () {
+  var NAMES = {
+    'retete': 'Rețete și idei de mâncare',
+    'simptome': 'Simptome și pattern-uri',
+    'stil-viata': 'Stil de viață',
+    'instrumente': 'Instrumente practice'
+  };
+  var cat = new URLSearchParams(location.search).get('cat');
+  if (!cat || !NAMES[cat]) return;
+
+  var grid = document.querySelector('.blog-grid');
+  var cards = [].slice.call(document.querySelectorAll('.post-card'));
+  var shown = 0;
+  cards.forEach(function (c) {
+    if (c.getAttribute('data-cat') === cat) { c.style.display = ''; shown++; }
+    else c.style.display = 'none';
+  });
+
+  var eyebrow = document.querySelector('.page-head .eyebrow');
+  var h1 = document.querySelector('.page-head h1');
+  var lead = document.querySelector('.page-head .lead');
+  if (eyebrow) eyebrow.innerHTML = '<a href="/blog.html" style="color:inherit">Blog</a> · ' + NAMES[cat];
+  if (h1) h1.textContent = NAMES[cat];
+  if (lead) lead.innerHTML = 'Articole din categoria „' + NAMES[cat] + '". <a href="/blog.html" style="color:var(--coral);font-weight:600">← Toate articolele</a>';
+
+  if (shown === 0 && grid) {
+    var msg = document.createElement('p');
+    msg.className = 'lead';
+    msg.style.cssText = 'grid-column:1/-1;text-align:center;color:var(--muted);padding:30px 0';
+    msg.innerHTML = 'Încă nu am scris articole pe această temă — revino curând! <br><a href="/blog.html" style="color:var(--coral);font-weight:600">← Vezi toate articolele</a>';
+    grid.appendChild(msg);
+  }
+})();
+</script>
 </body>
 </html>

@@ -464,6 +464,11 @@ img { display: block; max-width: 100%; }
   .hero-actions .btn { flex: 1; justify-content: center; }
 }
 
+/* carduri „Ce găsești" devenite linkuri spre blog */
+.find-card { display: flex; flex-direction: column; }
+.find-more { margin-top: auto; padding-top: 16px; font-weight: 600; font-size: 14.5px; color: var(--coral); }
+.find-card:hover .find-more { text-decoration: underline; }
+
 /* ============================================================
    BLOG — listă articole + pagina de articol
    ============================================================ */
