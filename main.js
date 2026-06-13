@@ -24,21 +24,25 @@
   function init() {
     /* header shadow on scroll */
     const header = $('#header');
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    if (header) {
+      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
 
     /* mobile menu */
     const toggle = $('#navToggle');
     const menu = $('#mobileMenu');
-    toggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-    $$('#mobileMenu a').forEach((a) => a.addEventListener('click', () => {
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+      $$('#mobileMenu a').forEach((a) => a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
 
     /* scroll reveal (scroll-position based — robust across environments) */
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -86,6 +90,7 @@
 
     /* download modal */
     const modal = $('#dlModal');
+    if (modal) {
     const dlTitle = $('#dlTitle');
     const dlGuide = $('#dlGuide');
     const dlForm = $('#dlForm');
@@ -133,6 +138,7 @@
       dlSuccess.hidden = false;
     });
     dlInput.addEventListener('input', () => dlField.classList.remove('invalid'));
+    }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

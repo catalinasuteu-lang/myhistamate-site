@@ -463,3 +463,58 @@ img { display: block; max-width: 100%; }
   .hero-actions { width: 100%; }
   .hero-actions .btn { flex: 1; justify-content: center; }
 }
+
+/* ============================================================
+   BLOG — listă articole + pagina de articol
+   ============================================================ */
+.page-head { padding: 150px 0 40px; }
+.page-head .eyebrow { justify-content: flex-start; }
+.page-head h1 { font-size: clamp(34px, 4.4vw, 56px); max-width: 16ch; }
+.page-head .lead { margin-top: 18px; max-width: 60ch; }
+
+/* lista de articole */
+.blog-list { padding: 20px 0 var(--section-y); }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.post-card { overflow: hidden; display: flex; flex-direction: column; text-decoration: none; }
+.post-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.post-card .post-cover { height: 200px; background: var(--cream-2); overflow: hidden; }
+.post-card .post-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-card .post-cover.is-gradient { display: flex; align-items: flex-end; padding: 22px; color: #fff; }
+.post-cover.cov-coral { background: linear-gradient(150deg, var(--coral), var(--coral-deep)); }
+.post-cover.cov-teal  { background: linear-gradient(150deg, var(--teal), var(--teal-deep)); }
+.post-cover.cov-gold  { background: linear-gradient(150deg, var(--gold), var(--gold-deep)); }
+.post-body { padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.post-meta { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); }
+.post-card h3 { font-size: 21px; line-height: 1.25; }
+.post-card p { font-size: 15.5px; flex: 1; }
+.post-readmore { font-weight: 600; color: var(--navy); font-size: 15px; }
+.post-card:hover .post-readmore { color: var(--coral); }
+
+/* pagina de articol */
+.article { padding: 0 0 var(--section-y); }
+.article-wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+.article-back { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+.article-back:hover { color: var(--coral); }
+.article-meta { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; }
+.article h1 { font-size: clamp(30px, 4vw, 50px); line-height: 1.1; margin-bottom: 18px; }
+.article-lead { font-size: 21px; line-height: 1.55; color: var(--body); margin-bottom: 12px; }
+.article-cover { width: 100%; height: 360px; object-fit: cover; border-radius: var(--r-lg); margin: 28px 0 8px; box-shadow: var(--shadow-md); }
+.article-body { font-size: 18.5px; line-height: 1.75; color: var(--body); }
+.article-body h2 { font-size: clamp(24px, 2.6vw, 32px); margin: 40px 0 14px; }
+.article-body h3 { font-size: 22px; margin: 30px 0 10px; }
+.article-body p { margin: 0 0 20px; }
+.article-body ul, .article-body ol { margin: 0 0 22px; padding-left: 22px; }
+.article-body li { margin-bottom: 10px; }
+.article-body strong { color: var(--navy); }
+.article-body em { color: var(--coral); font-family: var(--serif); }
+.article-body blockquote { margin: 30px 0; padding: 6px 0 6px 26px; border-left: 3px solid var(--gold); font-family: var(--serif); font-size: 23px; line-height: 1.45; color: var(--navy); font-style: italic; }
+.article-note { margin-top: 44px; padding: 22px 26px; background: var(--cream-2); border: 1px solid var(--hairline); border-radius: var(--r-md); font-size: 15px; color: var(--body); }
+.article-note strong { color: var(--navy); }
+
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+}
+@media (max-width: 560px) {
+  .page-head { padding: 120px 0 24px; }
+  .article-cover { height: 240px; }
+}
