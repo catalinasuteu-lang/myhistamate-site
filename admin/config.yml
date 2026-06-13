@@ -24,9 +24,6 @@ collections:
           - { label: "Hero · text mic de sus", name: hero_eyebrow, widget: string }
           - { label: "Hero · titlu mare (** = portocaliu)", name: hero_title, widget: text }
           - { label: "Hero · paragraf de prezentare", name: hero_lead, widget: text }
-          - { label: "Hero · pastila 1", name: hero_pill_1, widget: string }
-          - { label: "Hero · pastila 2", name: hero_pill_2, widget: string }
-          - { label: "Hero · pastila 3", name: hero_pill_3, widget: string }
 
           # ---- POVESTEA ----
           - { label: "Povestea · titlu", name: story_title, widget: text }
