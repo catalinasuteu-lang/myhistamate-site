@@ -482,12 +482,10 @@ img { display: block; max-width: 100%; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .post-card { overflow: hidden; display: flex; flex-direction: column; text-decoration: none; }
 .post-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.post-card .post-cover { height: 200px; background: var(--cream-2); overflow: hidden; }
-.post-card .post-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.post-card .post-cover.is-gradient { display: flex; align-items: flex-end; padding: 22px; color: #fff; }
-.post-cover.cov-coral { background: linear-gradient(150deg, var(--coral), var(--coral-deep)); }
-.post-cover.cov-teal  { background: linear-gradient(150deg, var(--teal), var(--teal-deep)); }
-.post-cover.cov-gold  { background: linear-gradient(150deg, var(--gold), var(--gold-deep)); }
+.post-card .post-cover { position: relative; height: 210px; background: var(--cream-2); overflow: hidden; }
+.post-card .post-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-card .post-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,46,59,.5), rgba(26,46,59,0) 55%); }
+.post-cover-tag { position: absolute; left: 18px; bottom: 14px; z-index: 2; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .post-body { padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .post-meta { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); }
 .post-card h3 { font-size: 21px; line-height: 1.25; }
