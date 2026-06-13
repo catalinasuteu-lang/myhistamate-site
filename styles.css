@@ -288,7 +288,7 @@ img { display: block; max-width: 100%; }
 .story-portrait img { width: 100%; height: 340px; border-radius: 20px; object-fit: cover; display: block; }
 .story-sign { font-family: var(--serif); font-size: 21px; line-height: 1.4; color: var(--navy); }
 .story-sign strong { color: var(--coral); font-weight: 600; }
-.story-body h2 { font-size: clamp(26px, 3vw, 38px); margin-bottom: 28px; }
+.story-body h2 { font-size: clamp(28px, 3.4vw, 44px); margin-bottom: 28px; }
 .story-body p { font-size: 19px; margin-bottom: 22px; max-width: 64ch; }
 .story-body em { font-style: italic; color: var(--coral); font-family: var(--serif); }
 .story-body blockquote {
@@ -359,7 +359,7 @@ img { display: block; max-width: 100%; }
 .nl-inner { max-width: 640px; position: relative; z-index: 1; }
 .nl-card .eyebrow { color: var(--gold); }
 .nl-card .eyebrow::before { background: var(--gold); }
-.nl-card h2 { color: #fff; font-size: clamp(28px, 3.4vw, 42px); margin-bottom: 18px; }
+.nl-card h2 { color: #fff; font-size: clamp(28px, 3.4vw, 44px); margin-bottom: 18px; }
 .nl-card .lead { color: rgba(255,255,255,.82); }
 .nl-form { margin-top: 32px; }
 .nl-note { font-size: 13.5px; color: rgba(255,255,255,.6); margin-top: 14px; }
