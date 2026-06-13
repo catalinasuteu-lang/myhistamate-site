@@ -376,7 +376,7 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    APP
    ============================================================ */
-.app-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
+.app-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: start; }
 .app-copy h2 { font-size: clamp(28px, 3.4vw, 44px); margin-bottom: 18px; }
 .app-copy p { margin-bottom: 16px; }
 .app-form { margin: 28px 0 8px; }
