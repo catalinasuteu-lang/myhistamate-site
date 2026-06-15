@@ -540,6 +540,18 @@ img { display: block; max-width: 100%; }
 .article-note { margin-top: 44px; padding: 22px 26px; background: var(--cream-2); border: 1px solid var(--hairline); border-radius: var(--r-md); font-size: 15px; color: var(--body); }
 .article-note strong { color: var(--navy); }
 
+/* articol — byline, drop cap, casetă de final (aspect editorial) */
+.article-byline { display: flex; align-items: center; gap: 11px; margin: 4px 0 26px; font-size: 14.5px; color: var(--muted); }
+.byline-avatar { width: 36px; height: 36px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, var(--coral-wash), var(--coral-tint)); border: 2px solid #fff; box-shadow: var(--shadow-sm); flex: none; }
+.article-byline strong { color: var(--navy); font-weight: 700; }
+.article-lead::first-letter { float: left; font-family: var(--serif); font-size: 58px; line-height: 0.82; padding: 8px 12px 0 0; color: var(--coral); }
+.article-end { margin-top: 52px; padding: 34px 32px; background: var(--cream-2); border: 1px solid var(--hairline); border-radius: var(--r-lg); text-align: center; }
+.article-end-q { font-family: var(--serif); font-size: 24px; color: var(--navy); margin-bottom: 8px; }
+.article-end > p { font-size: 16px; color: var(--body); margin: 0 auto 18px; max-width: 46ch; line-height: 1.55; }
+.article-end .btn { margin-bottom: 16px; }
+.article-end-back { display: inline-block; font-weight: 600; color: var(--muted); font-size: 14.5px; }
+.article-end-back:hover { color: var(--coral); }
+
 @media (max-width: 900px) {
   .blog-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
 }
