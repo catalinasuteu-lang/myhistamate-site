@@ -345,6 +345,11 @@ img { display: block; max-width: 100%; }
 .res-body p { font-size: 16px; flex: 1; }
 .res-dl { margin-top: 6px; align-self: flex-start; padding: 12px 22px; font-size: 15px; }
 
+/* Resurse — stare „în curând" */
+.res-soon { max-width: 600px; margin: 0 auto; text-align: center; background: var(--white); border: 1px solid var(--hairline); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); padding: 48px 40px; }
+.res-soon-badge { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--coral); background: var(--coral-wash); padding: 8px 18px; border-radius: var(--r-pill); margin-bottom: 20px; }
+.res-soon p { font-size: 17px; line-height: 1.6; color: var(--body); margin-bottom: 24px; max-width: 46ch; margin-left: auto; margin-right: auto; }
+
 /* ============================================================
    NEWSLETTER
    ============================================================ */
