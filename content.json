@@ -20,8 +20,8 @@
   "find_4_title": "Instrumente practice",
   "find_4_text": "Ghiduri descărcabile gratuit și, în curând, o aplicație care face munca în locul tău.",
 
-  "res_title": "Lucrez la ghiduri complete pentru tine.",
-  "res_lead": "",
+  "res_title": "Primul ghid e gata.",
+  "res_lead": "Lasă-mi adresa de email și îți trimit ghidul pe loc — gratuit.",
   "guide_1_title": "Ghidul restaurantului cu HIT",
   "guide_1_text": "Cum citești un meniu, ce întrebări pui, ce comanzi în siguranță.",
   "guide_1_pdf": "",
@@ -30,7 +30,7 @@
   "guide_2_pdf": "",
   "guide_3_title": "Găleata de histamină explicată simplu",
   "guide_3_text": "Cel mai important concept, explicat cum mi-aș fi dorit să mi-l explice cineva mie.",
-  "guide_3_pdf": "",
+  "guide_3_pdf": "/assets/ghiduri/ghid-galeata.pdf",
 
   "nl_title": "Îți scriu când am ceva care chiar ajută.",
   "nl_lead": "Fără program fix și fără spam. Primești un email când public un articol nou sau când descopăr ceva care m-a ajutat cu adevărat — plus vești despre aplicație, înaintea tuturor.",
