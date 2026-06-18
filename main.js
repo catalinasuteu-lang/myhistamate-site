@@ -129,7 +129,7 @@
       if (currentPdf) {
         dlSuccess.textContent = 'Gata! Apasă mai jos ca să deschizi ghidul. 📨';
         dlDownload.href = currentPdf;
-        dlDownload.setAttribute('download', '');
+        dlDownload.setAttribute('download', 'MyHistamate - ' + (dlGuide.value || 'Ghid') + '.pdf');
         dlDownload.hidden = false;
       } else {
         dlSuccess.textContent = 'Gata! Ți-am notat emailul — îți trimit ghidul foarte curând. 💛';

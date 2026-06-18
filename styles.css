@@ -353,6 +353,8 @@ img { display: block; max-width: 100%; }
 .res-cover-thumb { height: 300px; align-items: center; justify-content: center; position: relative; }
 .res-cover-thumb .res-cover-kicker { position: absolute; top: 22px; left: 26px; z-index: 2; }
 .res-cover-thumb img { position: relative; z-index: 1; height: 244px; width: auto; border-radius: 6px; box-shadow: 0 18px 44px rgba(26,46,59,.4); display: block; }
+.res-bundle { text-align: center; margin-top: 32px; }
+.res-bundle p { font-size: 16px; color: var(--body); margin-bottom: 12px; }
 
 /* ============================================================
    NEWSLETTER
