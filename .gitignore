@@ -12,6 +12,9 @@ POLITICA-CONFIDENTIALITATE-DRAFT.md
 
 # Exporturi brute ChatGPT (sursă poze — rămân local, nu se publică)
 assets/ChatGPT Image*
+# Surse PNG pentru coperțile de blog — pe site merg doar JPG-urile decupate
+assets/blog-*.png
+assets/*.png.png
 
 # Sistem
 .DS_Store
