@@ -67,7 +67,6 @@
     <div class="container">
       <p class="eyebrow reveal">Blog</p>
       <h1 class="reveal">Hai să vorbim despre viața cu HIT.</h1>
-      <p class="lead reveal">Sincer și din experiență — ce funcționează, ce nu, și ce mi-aș fi dorit să știu.</p>
     </div>
   </section>
 
@@ -298,6 +297,7 @@
         <span class="logo-text" style="color:#fff">My<span class="hl">Hista</span>mate</span>
       </a>
       <p class="footer-tag">Despre viața cu intoleranță la histamină — sincer și practic.</p>
+      <p class="footer-tag" style="margin-top:10px">Scrie-mi: <a href="mailto:hello@myhistamate.com" style="color:#fff;text-decoration:underline">hello@myhistamate.com</a></p>
     </div>
     <nav class="footer-col">
       <h4>Site</h4>
@@ -348,6 +348,7 @@
   var eyebrow = document.querySelector('.page-head .eyebrow');
   var h1 = document.querySelector('.page-head h1');
   var lead = document.querySelector('.page-head .lead');
+  if (!lead && h1) { lead = document.createElement('p'); lead.className = 'lead'; h1.insertAdjacentElement('afterend', lead); }
   if (eyebrow) eyebrow.innerHTML = '<a href="/blog.html" style="color:inherit">Blog</a> · ' + NAMES[cat];
   if (h1) h1.textContent = NAMES[cat];
   if (lead) lead.innerHTML = 'Articole din categoria „' + NAMES[cat] + '". <a href="/blog.html" style="color:var(--coral);font-weight:600">← Toate articolele</a>';
