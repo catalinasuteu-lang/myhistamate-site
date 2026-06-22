@@ -1,25 +1,355 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://myhistamate.com/</loc><lastmod>2026-06-20</lastmod><priority>1.0</priority></url>
-  <url><loc>https://myhistamate.com/blog.html</loc><lastmod>2026-06-20</lastmod><priority>0.8</priority></url>
-  <url><loc>https://myhistamate.com/blog/alcool-si-hit.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/camara-sigura.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/ciclu-histamina.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/constipatia-histamina.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/dao-suplimente.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/de-ce-myhistamate.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/dupa-diagnostic.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/eticheta-supermarket.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/familie-prieteni-hit.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/galeata-histamina.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/greseli-prima-luna.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/hit-in-miscare.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/lapte-vegetal.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/meniu-restaurant.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/simptome-doctori.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/somn-stres-histamina.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/sport-si-proteine.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/trei-mese-simple.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/wired-and-tired.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
-  <url><loc>https://myhistamate.com/blog/zile-proaste.html</loc><lastmod>2026-06-20</lastmod><priority>0.6</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://myhistamate.com/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/alcool-si-hit.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/alcool-si-hit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/alcool-si-hit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/alcool-si-hit.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/alcool-si-hit.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/alcool-si-hit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/alcool-si-hit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/alcool-si-hit.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/camara-sigura.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/camara-sigura.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/camara-sigura.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/camara-sigura.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/camara-sigura.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/camara-sigura.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/camara-sigura.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/camara-sigura.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/ciclu-histamina.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/ciclu-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/ciclu-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/ciclu-histamina.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/ciclu-histamina.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/ciclu-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/ciclu-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/ciclu-histamina.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/constipatia-histamina.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/constipatia-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/constipatia-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/constipatia-histamina.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/constipatia-histamina.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/constipatia-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/constipatia-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/constipatia-histamina.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/dao-suplimente.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/dao-suplimente.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/dao-suplimente.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/dao-suplimente.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/dao-suplimente.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/dao-suplimente.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/dao-suplimente.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/dao-suplimente.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/de-ce-myhistamate.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/de-ce-myhistamate.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/de-ce-myhistamate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/de-ce-myhistamate.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/de-ce-myhistamate.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/de-ce-myhistamate.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/de-ce-myhistamate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/de-ce-myhistamate.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/dupa-diagnostic.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/dupa-diagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/dupa-diagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/dupa-diagnostic.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/dupa-diagnostic.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/dupa-diagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/dupa-diagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/dupa-diagnostic.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/eticheta-supermarket.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/eticheta-supermarket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/eticheta-supermarket.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/eticheta-supermarket.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/eticheta-supermarket.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/eticheta-supermarket.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/eticheta-supermarket.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/eticheta-supermarket.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/familie-prieteni-hit.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/familie-prieteni-hit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/familie-prieteni-hit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/familie-prieteni-hit.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/familie-prieteni-hit.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/familie-prieteni-hit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/familie-prieteni-hit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/familie-prieteni-hit.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/galeata-histamina.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/galeata-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/galeata-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/galeata-histamina.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/galeata-histamina.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/galeata-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/galeata-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/galeata-histamina.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/greseli-prima-luna.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/greseli-prima-luna.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/greseli-prima-luna.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/greseli-prima-luna.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/greseli-prima-luna.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/greseli-prima-luna.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/greseli-prima-luna.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/greseli-prima-luna.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/hit-in-miscare.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/hit-in-miscare.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/hit-in-miscare.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/hit-in-miscare.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/hit-in-miscare.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/hit-in-miscare.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/hit-in-miscare.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/hit-in-miscare.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/lapte-vegetal.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/lapte-vegetal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/lapte-vegetal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/lapte-vegetal.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/lapte-vegetal.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/lapte-vegetal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/lapte-vegetal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/lapte-vegetal.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/meniu-restaurant.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/meniu-restaurant.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/meniu-restaurant.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/meniu-restaurant.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/meniu-restaurant.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/meniu-restaurant.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/meniu-restaurant.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/meniu-restaurant.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/simptome-doctori.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/simptome-doctori.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/simptome-doctori.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/simptome-doctori.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/simptome-doctori.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/simptome-doctori.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/simptome-doctori.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/simptome-doctori.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/somn-stres-histamina.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/somn-stres-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/somn-stres-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/somn-stres-histamina.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/somn-stres-histamina.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/somn-stres-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/somn-stres-histamina.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/somn-stres-histamina.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/sport-si-proteine.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/sport-si-proteine.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/sport-si-proteine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/sport-si-proteine.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/sport-si-proteine.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/sport-si-proteine.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/sport-si-proteine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/sport-si-proteine.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/trei-mese-simple.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/trei-mese-simple.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/trei-mese-simple.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/trei-mese-simple.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/trei-mese-simple.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/trei-mese-simple.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/trei-mese-simple.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/trei-mese-simple.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/wired-and-tired.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/wired-and-tired.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/wired-and-tired.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/wired-and-tired.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/wired-and-tired.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/wired-and-tired.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/wired-and-tired.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/wired-and-tired.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/blog/zile-proaste.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/zile-proaste.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/zile-proaste.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/zile-proaste.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/blog/zile-proaste.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.com/blog/zile-proaste.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/zile-proaste.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/blog/zile-proaste.html"/>
+  </url>
 </urlset>
