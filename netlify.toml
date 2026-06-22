@@ -4,6 +4,12 @@
 [build]
   publish = "."
 
+# Domain-based language routing: .com -> English (/en/), .ro -> Romanian (root)
+[[edge_functions]]
+  path = "/*"
+  function = "domain-lang"
+  excludedPath = ["/assets/*", "/brand/*", "/admin/*", "/*.js", "/*.css", "/*.json", "/*.xml", "/*.txt", "/*.jpg", "/*.jpeg", "/*.png", "/*.svg", "/*.pdf", "/*.ico", "/*.webp"]
+
 [[headers]]
   for = "/*"
   [headers.values]
