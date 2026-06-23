@@ -616,6 +616,7 @@ img { display: block; max-width: 100%; }
 .journal-table th { background: var(--cream-2); font-weight: 700; color: var(--navy); font-size: 12.5px; letter-spacing: .02em; }
 .journal-table td { height: 40px; }
 .journal-legend { font-size: 14.5px; color: var(--muted); margin-top: 6px; }
+.journal-why { max-width: 760px; font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 10px; }
 @media print {
   .journal-table { font-size: 10.5px; }
   .journal-table th, .journal-table td { padding: 7px 6px; }
