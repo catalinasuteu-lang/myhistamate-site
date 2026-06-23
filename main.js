@@ -247,11 +247,11 @@
     const dlSuccess = $('#dlSuccess');
     const dlInput = $('#dlEmail');
     const dlDownload = $('#dlDownload');
-    let currentPdf = '';
+    let currentKey = '';
 
     function openModal(btn) {
       const title = btn.dataset.title;
-      currentPdf = btn.dataset.pdf || '';
+      currentKey = btn.dataset.pdfKey || '';
       dlTitle.textContent = title;
       dlGuide.value = title;
       dlField.style.display = '';
@@ -273,18 +273,27 @@
     dlForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (!isEmail(dlInput.value)) { dlField.classList.add('invalid'); dlInput.focus(); return; }
-      submitToNetlify(dlForm);
+      submitToNetlify(dlForm); // captură lead (Netlify Forms)
+      const lang = location.pathname.indexOf('/en/') === 0 ? 'en' : 'ro';
+      const M = lang === 'en'
+        ? { wait: 'One sec, preparing your guide… ⏳', ready: 'Done! Tap below to open the guide. 📨', err: "Oops, something went wrong. Write to me at hello@myhistamate.com and I'll send it over. 💛" }
+        : { wait: 'O secundă, îți pregătesc ghidul… ⏳', ready: 'Gata! Apasă mai jos ca să deschizi ghidul. 📨', err: 'Ups, ceva n-a mers. Scrie-mi la hello@myhistamate.com și ți-l trimit imediat. 💛' };
       dlField.style.display = 'none';
-      if (currentPdf) {
-        dlSuccess.textContent = 'Gata! Apasă mai jos ca să deschizi ghidul. 📨';
-        dlDownload.href = currentPdf;
-        dlDownload.setAttribute('download', 'MyHistamate - ' + (dlGuide.value || 'Ghid') + '.pdf');
-        dlDownload.hidden = false;
-      } else {
-        dlSuccess.textContent = 'Gata! Ți-am notat emailul — îți trimit ghidul foarte curând. 💛';
-        dlDownload.hidden = true;
-      }
+      dlDownload.hidden = true;
+      dlSuccess.textContent = M.wait;
       dlSuccess.hidden = false;
+      fetch('/.netlify/functions/download-guide', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: dlInput.value, key: currentKey, lang }),
+      })
+        .then((r) => (r.ok ? r.blob() : Promise.reject()))
+        .then((blob) => {
+          dlDownload.href = URL.createObjectURL(blob);
+          dlDownload.setAttribute('download', 'MyHistamate - ' + (dlGuide.value || 'Ghid') + '.pdf');
+          dlDownload.hidden = false;
+          dlSuccess.textContent = M.ready;
+        })
+        .catch(() => { dlSuccess.textContent = M.err; });
     });
     dlInput.addEventListener('input', () => dlField.classList.remove('invalid'));
     }

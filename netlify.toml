@@ -23,3 +23,15 @@
   for = "/brand/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# Ghidurile PDF sunt închise: accesibile DOAR prin funcția download-guide (după email).
+# Fișierele fizice există în /guides-gated dar accesul HTTP direct e blocat (404 forțat),
+# iar funcția le citește din bundle (included_files).
+[functions]
+  included_files = ["guides-gated/**"]
+
+[[redirects]]
+  from = "/guides-gated/*"
+  to = "/404.html"
+  status = 404
+  force = true
