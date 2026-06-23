@@ -15,14 +15,15 @@ export default async (req) => {
   }
 
   const store = getStore('article-likes');
+  const key = slug.replace(/^\//, ''); // cheile Blobs nu pot începe cu „/"
 
   if (req.method === 'POST') {
-    const cur = parseInt((await store.get(slug)) || '0', 10) || 0;
+    const cur = parseInt((await store.get(key)) || '0', 10) || 0;
     const next = cur + 1;
-    await store.set(slug, String(next));
+    await store.set(key, String(next));
     return new Response(JSON.stringify({ slug, count: next }), { headers: HEADERS });
   }
 
-  const count = parseInt((await store.get(slug)) || '0', 10) || 0;
+  const count = parseInt((await store.get(key)) || '0', 10) || 0;
   return new Response(JSON.stringify({ slug, count }), { headers: HEADERS });
 };
