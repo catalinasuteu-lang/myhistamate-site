@@ -563,6 +563,12 @@ img { display: block; max-width: 100%; }
 .article-end-back { display: inline-block; font-weight: 600; color: var(--muted); font-size: 14.5px; }
 .article-end-back:hover { color: var(--coral); }
 
+/* "Citește în continuare" — articole din aceeași categorie, la finalul articolului */
+.related-posts { margin-top: 56px; padding-top: 44px; border-top: 1px solid var(--hairline); }
+.related-head { margin-bottom: 28px; }
+.related-head h2 { font-size: 26px; line-height: 1.2; }
+.related-posts .blog-grid { gap: 22px; }
+
 /* ghid — bară de acțiuni (Salvează ca PDF) + listă cu bife */
 .guide-actions { margin: 22px 0 8px; }
 .guide-check { list-style: none; padding: 0; margin: 0 0 22px; }
@@ -571,7 +577,7 @@ img { display: block; max-width: 100%; }
 
 /* PDF curat când dai „Salvează ca PDF" / Print */
 @media print {
-  .site-header, .mobile-menu, .site-footer, .guide-actions, .article-back, .article-end { display: none !important; }
+  .site-header, .mobile-menu, .site-footer, .guide-actions, .article-back, .article-end, .related-posts { display: none !important; }
   .article-wrap { padding-top: 0 !important; max-width: 100% !important; }
   .article-cover { box-shadow: none !important; }
   body { font-size: 12pt; color: #000; }

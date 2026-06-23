@@ -21,7 +21,51 @@
     }).catch(() => { /* offline / local preview — ignore */ });
   }
 
+  /* "Citește în continuare" — articole din aceeași categorie, la finalul unui articol.
+     Sursa de adevăr e chiar blog.html (sau /en/blog.html): listează deja fiecare
+     articol cu data-cat, copertă, titlu și descriere, așa că nu ținem nimic în sync
+     aici. Adăugăm un articol nou în blog.html și apare automat și ca „related". */
+  function relatedArticles() {
+    const path = location.pathname;
+    if (!/\/blog\/[^/]+\.html$/.test(path)) return;        // doar pagini de articol
+    const wrap = $('.article-wrap'); if (!wrap) return;
+    const isEN = path.indexOf('/en/') === 0;
+    const listUrl = isEN ? '/en/blog.html' : '/blog.html';
+    const strip = (h) => (h || '').replace(/^https?:\/\/[^/]+/, '').replace(/[?#].*$/, '');
+    fetch(listUrl).then((r) => r.text()).then((html) => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const cards = $$('.post-card', doc);
+      if (!cards.length) return;
+      const current = cards.find((c) => strip(c.getAttribute('href')) === path);
+      const cat = current && current.getAttribute('data-cat');
+      const others = cards.filter((c) => strip(c.getAttribute('href')) !== path);
+      const same = others.filter((c) => c.getAttribute('data-cat') === cat);
+      const picks = same.concat(others.filter((c) => !same.includes(c))).slice(0, 3);
+      if (!picks.length) return;
+      const section = document.createElement('section');
+      section.className = 'related-posts';
+      const head = document.createElement('div');
+      head.className = 'related-head';
+      head.innerHTML = '<p class="eyebrow"></p><h2></h2>';
+      head.querySelector('.eyebrow').textContent = isEN ? 'More to read' : 'Mai multe';
+      head.querySelector('h2').textContent = isEN ? 'Keep reading' : 'Citește în continuare';
+      const grid = document.createElement('div');
+      grid.className = 'blog-grid';
+      picks.forEach((c) => {
+        const a = c.cloneNode(true);
+        a.classList.remove('reveal'); a.classList.add('in');
+        grid.appendChild(a);
+      });
+      section.appendChild(head);
+      section.appendChild(grid);
+      const end = $('.article-end', wrap);
+      if (end) wrap.insertBefore(section, end); else wrap.appendChild(section);
+    }).catch(() => { /* offline / fetch blocat — ignoră */ });
+  }
+
   function init() {
+    relatedArticles();
+
     /* header shadow on scroll */
     const header = $('#header');
     if (header) {
