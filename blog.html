@@ -78,6 +78,18 @@
 
   <section class="blog-list">
     <div class="container">
+      <div class="blog-toolbar reveal">
+        <div class="blog-search">
+          <input type="search" id="blogSearch" placeholder="Caută în articole…" autocomplete="off" aria-label="Caută în articole">
+        </div>
+        <div class="blog-filters" role="group" aria-label="Filtrează după categorie">
+          <button type="button" class="chip is-active" data-filter="all">Toate</button>
+          <button type="button" class="chip" data-filter="retete">Rețete</button>
+          <button type="button" class="chip" data-filter="simptome">Simptome</button>
+          <button type="button" class="chip" data-filter="stil-viata">Stil de viață</button>
+          <button type="button" class="chip" data-filter="instrumente">Instrumente</button>
+        </div>
+      </div>
       <div class="blog-grid">
 
         <a class="card post-card reveal" data-cat="stil-viata" href="/blog/alcool-si-hit.html">
@@ -335,40 +347,49 @@
 
 <script src="/main.js"></script>
 <script>
-/* Filtrare articole pe categorie (din /blog.html?cat=...) */
+/* Filtrare pe categorie + căutare (client-side) */
 (function () {
-  var NAMES = {
-    'retete': 'Rețete și idei de mâncare',
-    'simptome': 'Simptome și pattern-uri',
-    'stil-viata': 'Stil de viață',
-    'instrumente': 'Instrumente practice'
-  };
-  var cat = new URLSearchParams(location.search).get('cat');
-  if (!cat || !NAMES[cat]) return;
-
+  var NAMES = { 'retete':1,'simptome':1,'stil-viata':1,'instrumente':1 };
   var grid = document.querySelector('.blog-grid');
   var cards = [].slice.call(document.querySelectorAll('.post-card'));
-  var shown = 0;
-  cards.forEach(function (c) {
-    if (c.getAttribute('data-cat') === cat) { c.style.display = ''; shown++; }
-    else c.style.display = 'none';
-  });
+  var search = document.getElementById('blogSearch');
+  var chips = [].slice.call(document.querySelectorAll('.blog-filters .chip'));
+  var activeCat = 'all', query = '';
 
-  var eyebrow = document.querySelector('.page-head .eyebrow');
-  var h1 = document.querySelector('.page-head h1');
-  var lead = document.querySelector('.page-head .lead');
-  if (!lead && h1) { lead = document.createElement('p'); lead.className = 'lead'; h1.insertAdjacentElement('afterend', lead); }
-  if (eyebrow) eyebrow.innerHTML = '<a href="/blog.html" style="color:inherit">Blog</a> · ' + NAMES[cat];
-  if (h1) h1.textContent = NAMES[cat];
-  if (lead) lead.innerHTML = 'Articole din categoria „' + NAMES[cat] + '". <a href="/blog.html" style="color:var(--coral);font-weight:600">← Toate articolele</a>';
+  function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  cards.forEach(function(c){ c._txt = norm(c.textContent); });
 
-  if (shown === 0 && grid) {
-    var msg = document.createElement('p');
-    msg.className = 'lead';
-    msg.style.cssText = 'grid-column:1/-1;text-align:center;color:var(--muted);padding:30px 0';
-    msg.innerHTML = 'Încă nu am scris articole pe această temă — revino curând! <br><a href="/blog.html" style="color:var(--coral);font-weight:600">← Vezi toate articolele</a>';
-    grid.appendChild(msg);
+  var emptyMsg = document.createElement('p');
+  emptyMsg.className = 'lead blog-empty';
+  emptyMsg.style.cssText = 'grid-column:1/-1;text-align:center;color:var(--muted);padding:30px 0';
+  emptyMsg.hidden = true;
+  if (grid) grid.appendChild(emptyMsg);
+
+  function apply(){
+    var q = norm(query.trim()), shown = 0;
+    cards.forEach(function(c){
+      var show = (activeCat === 'all' || c.getAttribute('data-cat') === activeCat) && (!q || c._txt.indexOf(q) > -1);
+      c.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    emptyMsg.hidden = shown !== 0;
+    if (shown === 0) emptyMsg.textContent = query.trim()
+      ? 'Niciun articol pentru „' + query.trim() + '".'
+      : 'Încă nu am scris articole pe această temă — revino curând!';
   }
+
+  function setCat(cat, push){
+    activeCat = cat;
+    chips.forEach(function(ch){ ch.classList.toggle('is-active', ch.getAttribute('data-filter') === cat); });
+    if (push) history.replaceState(null, '', cat === 'all' ? '/blog.html' : '/blog.html?cat=' + cat);
+    apply();
+  }
+
+  chips.forEach(function(ch){ ch.addEventListener('click', function(){ setCat(ch.getAttribute('data-filter'), true); }); });
+  if (search) search.addEventListener('input', function(){ query = search.value; apply(); });
+
+  var initial = new URLSearchParams(location.search).get('cat');
+  setCat(initial && NAMES[initial] ? initial : 'all', false);
 })();
 </script>
 </body>

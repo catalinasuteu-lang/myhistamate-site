@@ -530,6 +530,22 @@ img { display: block; max-width: 100%; }
 .post-readmore { font-weight: 600; color: var(--navy); font-size: 15px; }
 .post-card:hover .post-readmore { color: var(--coral); }
 
+/* blog — bară de căutare + filtre pe categorie */
+.blog-toolbar { display: flex; flex-wrap: wrap; gap: 16px 20px; align-items: center; justify-content: space-between; margin-bottom: 38px; }
+.blog-search { flex: 1 1 240px; max-width: 360px; position: relative; }
+.blog-search input { width: 100%; padding: 12px 16px; border: 1px solid var(--hairline); border-radius: var(--r-md); font: inherit; font-size: 15px; background: #fff; color: var(--navy); }
+.blog-search input::placeholder { color: var(--muted); }
+.blog-search input:focus { outline: none; border-color: var(--coral); box-shadow: 0 0 0 3px var(--coral-wash); }
+.blog-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--hairline); background: #fff; color: var(--navy); padding: 8px 16px; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: .18s; }
+.chip:hover { border-color: var(--coral); color: var(--coral); }
+.chip.is-active { background: var(--coral); color: #fff; border-color: var(--coral); }
+@media (max-width: 560px) {
+  .blog-toolbar { flex-direction: column; align-items: stretch; }
+  .blog-search { max-width: none; }
+  .blog-filters { justify-content: flex-start; }
+}
+
 /* pagina de articol */
 .article { padding: 0 0 var(--section-y); }
 .article-wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
