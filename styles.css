@@ -593,6 +593,18 @@ img { display: block; max-width: 100%; }
 .fb-btn:hover, .sh-btn:hover { border-color: var(--coral); color: var(--coral); }
 .fb-thanks { font-weight: 600; color: var(--coral); font-size: 15.5px; }
 
+/* FAQ — acordeon */
+.faq-list { max-width: 760px; margin: 8px auto 0; }
+.faq-item { border-bottom: 1px solid var(--hairline); }
+.faq-item summary { cursor: pointer; padding: 22px 36px 22px 0; position: relative; font-family: var(--serif); font-size: 20px; line-height: 1.35; color: var(--navy); list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; position: absolute; right: 4px; top: 18px; color: var(--coral); font-size: 26px; font-weight: 400; line-height: 1; transition: transform .2s; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item summary:hover { color: var(--coral); }
+.faq-a { padding: 0 0 24px; color: var(--body); font-size: 16.5px; line-height: 1.65; }
+.faq-a p { margin: 0 0 12px; }
+.faq-a a { color: var(--coral); font-weight: 600; }
+
 /* ghid — bară de acțiuni (Salvează ca PDF) + listă cu bife */
 .guide-actions { margin: 22px 0 8px; }
 .guide-check { list-style: none; padding: 0; margin: 0 0 22px; }
