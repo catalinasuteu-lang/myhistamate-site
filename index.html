@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-hero="split" data-density="comfy">
+<a class="skip-link" href="#top">Sari la conținut</a>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="header">
@@ -264,7 +265,7 @@
           <input type="hidden" name="form-name" value="waitlist">
           <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
           <div class="field">
-            <input type="email" id="appEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
+            <label for="appEmail" class="visually-hidden">adresa ta de email</label><input type="email" id="appEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
             <button type="submit" class="btn btn-primary">Înscrie-te pe lista de așteptare <span class="arrow">→</span></button>
           </div>
           <p class="nl-note">Fără spam. Doar un mesaj când lansăm. 💗</p>
@@ -332,7 +333,7 @@
           <input type="hidden" name="form-name" value="newsletter">
           <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
           <div class="field">
-            <input type="email" id="nlEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
+            <label for="nlEmail" class="visually-hidden">adresa ta de email</label><input type="email" id="nlEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
             <button type="submit" class="btn btn-primary">Mă abonez <span class="arrow">→</span></button>
           </div>
           <p class="nl-note">Te poți dezabona oricând. Citește <a href="/confidentialitate.html">politica de confidențialitate</a>.</p>
@@ -405,7 +406,7 @@
       <input type="hidden" name="guide" id="dlGuide" value="">
       <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
       <div class="field">
-        <input type="email" id="dlEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
+        <label for="dlEmail" class="visually-hidden">adresa ta de email</label><input type="email" id="dlEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
         <button type="submit" class="btn btn-primary">Trimite-mi ghidul <span class="arrow">→</span></button>
       </div>
       <p class="form-success" id="dlSuccess" hidden>Perfect! 📨</p>

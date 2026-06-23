@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body data-hero="split" data-density="comfy">
+<a class="skip-link" href="#top">Skip to content</a>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="header">
@@ -269,7 +270,7 @@
           <input type="hidden" name="lang" value="en">
           <p class="hp-field"><label>Don't fill this in: <input name="bot-field"></label></p>
           <div class="field">
-            <input type="email" id="appEmail" name="email" placeholder="your email address" required autocomplete="email">
+            <label for="appEmail" class="visually-hidden">your email address</label><input type="email" id="appEmail" name="email" placeholder="your email address" required autocomplete="email">
             <button type="submit" class="btn btn-primary">Join the waiting list <span class="arrow">→</span></button>
           </div>
           <p class="nl-note">No spam. Just one message when we launch. 💗</p>
@@ -338,7 +339,7 @@
           <input type="hidden" name="lang" value="en">
           <p class="hp-field"><label>Don't fill this in: <input name="bot-field"></label></p>
           <div class="field">
-            <input type="email" id="nlEmail" name="email" placeholder="your email address" required autocomplete="email">
+            <label for="nlEmail" class="visually-hidden">your email address</label><input type="email" id="nlEmail" name="email" placeholder="your email address" required autocomplete="email">
             <button type="submit" class="btn btn-primary">Subscribe <span class="arrow">→</span></button>
           </div>
           <p class="nl-note">You can unsubscribe anytime. Read the <a href="/en/confidentialitate.html">privacy policy</a>.</p>
@@ -412,7 +413,7 @@
       <input type="hidden" name="guide" id="dlGuide" value="">
       <p class="hp-field"><label>Don't fill this in: <input name="bot-field"></label></p>
       <div class="field">
-        <input type="email" id="dlEmail" name="email" placeholder="your email address" required autocomplete="email">
+        <label for="dlEmail" class="visually-hidden">your email address</label><input type="email" id="dlEmail" name="email" placeholder="your email address" required autocomplete="email">
         <button type="submit" class="btn btn-primary">Send me the guide <span class="arrow">→</span></button>
       </div>
       <p class="form-success" id="dlSuccess" hidden>Perfect! 📨</p>
