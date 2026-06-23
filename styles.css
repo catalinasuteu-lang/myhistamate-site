@@ -585,6 +585,14 @@ img { display: block; max-width: 100%; }
 .related-head h2 { font-size: 26px; line-height: 1.2; }
 .related-posts .blog-grid { gap: 22px; }
 
+/* share + feedback la finalul articolului */
+.article-engage { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 18px; }
+.article-feedback, .article-share { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.fb-q, .sh-label { font-weight: 600; color: var(--navy); font-size: 15.5px; margin-right: 4px; }
+.fb-btn, .sh-btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--hairline); background: #fff; color: var(--navy); padding: 8px 16px; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: .18s; }
+.fb-btn:hover, .sh-btn:hover { border-color: var(--coral); color: var(--coral); }
+.fb-thanks { font-weight: 600; color: var(--coral); font-size: 15.5px; }
+
 /* ghid — bară de acțiuni (Salvează ca PDF) + listă cu bife */
 .guide-actions { margin: 22px 0 8px; }
 .guide-check { list-style: none; padding: 0; margin: 0 0 22px; }
@@ -593,7 +601,7 @@ img { display: block; max-width: 100%; }
 
 /* PDF curat când dai „Salvează ca PDF" / Print */
 @media print {
-  .site-header, .mobile-menu, .site-footer, .guide-actions, .article-back, .article-end, .related-posts { display: none !important; }
+  .site-header, .mobile-menu, .site-footer, .guide-actions, .article-back, .article-end, .related-posts, .article-engage { display: none !important; }
   .article-wrap { padding-top: 0 !important; max-width: 100% !important; }
   .article-cover { box-shadow: none !important; }
   body { font-size: 12pt; color: #000; }

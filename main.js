@@ -66,8 +66,66 @@
     }).catch(() => { /* offline / fetch blocat — ignoră */ });
   }
 
+  /* Share + feedback la finalul articolului (injectate, ca și „related").
+     Feedback-ul se salvează în Netlify Forms (formular static „article-feedback"
+     declarat în blog.html ca Netlify să-l înregistreze). */
+  function articleEngagement() {
+    const path = location.pathname;
+    if (!/\/blog\/[^/]+$/.test(path)) return;
+    const wrap = $('.article-wrap'); if (!wrap) return;
+    if ($('.article-engage', wrap)) return;
+    const isEN = path.indexOf('/en/') === 0;
+    const url = location.href.split('#')[0];
+    const t = {
+      q: isEN ? 'Was this article helpful?' : 'Ți-a fost util articolul?',
+      yes: isEN ? 'Yes' : 'Da', no: isEN ? 'No' : 'Nu',
+      thanks: isEN ? 'Thanks for your feedback! 💛' : 'Mulțumesc pentru feedback! 💛',
+      share: isEN ? 'Share:' : 'Distribuie:',
+      copy: isEN ? 'Copy link' : 'Copiază linkul',
+      copied: isEN ? 'Link copied!' : 'Link copiat!',
+    };
+
+    const sec = document.createElement('div');
+    sec.className = 'article-engage';
+
+    const fb = document.createElement('div');
+    fb.className = 'article-feedback';
+    const q = document.createElement('span'); q.className = 'fb-q'; q.textContent = t.q;
+    const yes = document.createElement('button'); yes.type = 'button'; yes.className = 'fb-btn'; yes.textContent = '👍 ' + t.yes;
+    const no = document.createElement('button'); no.type = 'button'; no.className = 'fb-btn'; no.textContent = '👎 ' + t.no;
+    fb.appendChild(q); fb.appendChild(yes); fb.appendChild(no);
+
+    function vote(val) {
+      const body = new URLSearchParams({ 'form-name': 'article-feedback', article: path, useful: val }).toString();
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body }).catch(() => {});
+      const thanks = document.createElement('span'); thanks.className = 'fb-thanks'; thanks.textContent = t.thanks;
+      fb.replaceChildren(thanks);
+    }
+    yes.addEventListener('click', () => vote('da'));
+    no.addEventListener('click', () => vote('nu'));
+
+    const sh = document.createElement('div');
+    sh.className = 'article-share';
+    const lbl = document.createElement('span'); lbl.className = 'sh-label'; lbl.textContent = t.share;
+    const wa = document.createElement('a'); wa.className = 'sh-btn'; wa.target = '_blank'; wa.rel = 'noopener';
+    wa.href = 'https://wa.me/?text=' + encodeURIComponent(document.title + ' ' + url); wa.textContent = 'WhatsApp';
+    const fbk = document.createElement('a'); fbk.className = 'sh-btn'; fbk.target = '_blank'; fbk.rel = 'noopener';
+    fbk.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url); fbk.textContent = 'Facebook';
+    const cp = document.createElement('button'); cp.type = 'button'; cp.className = 'sh-btn'; cp.textContent = t.copy;
+    cp.addEventListener('click', () => {
+      const done = () => { cp.textContent = t.copied; setTimeout(() => { cp.textContent = t.copy; }, 2000); };
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(done).catch(done); else done();
+    });
+    sh.appendChild(lbl); sh.appendChild(wa); sh.appendChild(fbk); sh.appendChild(cp);
+
+    sec.appendChild(fb); sec.appendChild(sh);
+    const end = $('.article-end', wrap);
+    if (end) wrap.insertBefore(sec, end); else wrap.appendChild(sec);
+  }
+
   function init() {
     relatedArticles();
+    articleEngagement();
 
     /* header shadow on scroll */
     const header = $('#header');
