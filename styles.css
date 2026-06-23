@@ -592,6 +592,12 @@ img { display: block; max-width: 100%; }
 .fb-btn, .sh-btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--hairline); background: #fff; color: var(--navy); padding: 8px 16px; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; transition: .18s; }
 .fb-btn:hover, .sh-btn:hover { border-color: var(--coral); color: var(--coral); }
 .fb-thanks { font-weight: 600; color: var(--coral); font-size: 15.5px; }
+.article-likes { order: -1; }
+.like-btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--hairline); background: #fff; color: var(--navy); padding: 9px 18px; border-radius: 999px; font: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; transition: .18s; }
+.like-btn:hover:not(:disabled) { border-color: var(--coral); color: var(--coral); }
+.like-btn.is-liked { border-color: var(--coral); color: var(--coral); background: var(--coral-wash); cursor: default; }
+.like-btn .like-heart { font-size: 16px; line-height: 1; }
+.like-btn .like-count { font-weight: 800; }
 
 /* accesibilitate — skip link + etichete ascunse vizual */
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
@@ -630,7 +636,7 @@ img { display: block; max-width: 100%; }
 
 /* PDF curat când dai „Salvează ca PDF" / Print */
 @media print {
-  .site-header, .mobile-menu, .site-footer, .guide-actions, .article-back, .article-end, .related-posts, .article-engage { display: none !important; }
+  .site-header, .mobile-menu, .site-footer, .guide-actions, .article-back, .article-end, .related-posts, .article-engage, .article-likes { display: none !important; }
   .article-wrap { padding-top: 0 !important; max-width: 100% !important; }
   .article-cover { box-shadow: none !important; }
   body { font-size: 12pt; color: #000; }

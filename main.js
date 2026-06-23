@@ -123,9 +123,53 @@
     if (end) wrap.insertBefore(sec, end); else wrap.appendChild(sec);
   }
 
+  /* Like public pe articol — contor persistent via Netlify Function (/.netlify/functions/likes).
+     Dacă funcția nu e disponibilă (ex. preview local), nu afișează nimic. */
+  function articleLikes() {
+    const path = location.pathname;
+    if (!/\/blog\/[^/]+$/.test(path)) return;
+    const wrap = $('.article-wrap'); if (!wrap) return;
+    const isEN = path.indexOf('/en/') === 0;
+    const slug = path.replace(/[?#].*$/, '').replace(/\.html$/, '').replace(/\/$/, '');
+    const key = 'liked:' + slug;
+    const label = isEN ? 'Like' : 'Îmi place';
+    const ep = '/.netlify/functions/likes?slug=' + encodeURIComponent(slug);
+
+    fetch(ep).then((r) => (r.ok ? r.json() : Promise.reject())).then((data) => {
+      let count = (data && typeof data.count === 'number') ? data.count : 0;
+      let liked = localStorage.getItem(key) === '1';
+      const box = document.createElement('div');
+      box.className = 'article-likes';
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      const render = () => {
+        btn.className = 'like-btn' + (liked ? ' is-liked' : '');
+        btn.disabled = liked;
+        btn.innerHTML = '';
+        const h = document.createElement('span'); h.className = 'like-heart'; h.textContent = liked ? '❤️' : '🤍';
+        const l = document.createElement('span'); l.className = 'like-label'; l.textContent = label;
+        const c = document.createElement('span'); c.className = 'like-count'; c.textContent = count;
+        btn.append(h, l, c);
+      };
+      render();
+      btn.addEventListener('click', () => {
+        if (liked) return;
+        liked = true; count += 1; localStorage.setItem(key, '1'); render();
+        fetch(ep, { method: 'POST' }).then((r) => (r.ok ? r.json() : null)).then((d) => {
+          if (d && typeof d.count === 'number') { count = d.count; render(); }
+        }).catch(() => {});
+      });
+      box.appendChild(btn);
+      const engage = $('.article-engage', wrap);
+      if (engage) engage.insertBefore(box, engage.firstChild);
+      else { const end = $('.article-end', wrap); if (end) wrap.insertBefore(box, end); else wrap.appendChild(box); }
+    }).catch(() => { /* funcție indisponibilă — nu afișez butonul */ });
+  }
+
   function init() {
     relatedArticles();
     articleEngagement();
+    articleLikes();
 
     /* header shadow on scroll */
     const header = $('#header');
