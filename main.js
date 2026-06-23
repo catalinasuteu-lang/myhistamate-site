@@ -27,18 +27,21 @@
      aici. Adăugăm un articol nou în blog.html și apare automat și ca „related". */
   function relatedArticles() {
     const path = location.pathname;
-    if (!/\/blog\/[^/]+\.html$/.test(path)) return;        // doar pagini de articol
+    if (!/\/blog\/[^/]+$/.test(path)) return;              // doar pagini de articol (cu sau fără .html)
     const wrap = $('.article-wrap'); if (!wrap) return;
     const isEN = path.indexOf('/en/') === 0;
     const listUrl = isEN ? '/en/blog.html' : '/blog.html';
-    const strip = (h) => (h || '').replace(/^https?:\/\/[^/]+/, '').replace(/[?#].*$/, '');
+    /* normalizează adresa (scoate host, query/hash, .html și / final) ca potrivirea
+       să meargă și pe Netlify, unde linkurile sunt „pretty" (fără .html) */
+    const norm = (h) => (h || '').replace(/^https?:\/\/[^/]+/, '').replace(/[?#].*$/, '').replace(/\.html$/, '').replace(/\/$/, '');
+    const here = norm(path);
     fetch(listUrl).then((r) => r.text()).then((html) => {
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const cards = $$('.post-card', doc);
       if (!cards.length) return;
-      const current = cards.find((c) => strip(c.getAttribute('href')) === path);
+      const current = cards.find((c) => norm(c.getAttribute('href')) === here);
       const cat = current && current.getAttribute('data-cat');
-      const others = cards.filter((c) => strip(c.getAttribute('href')) !== path);
+      const others = cards.filter((c) => norm(c.getAttribute('href')) !== here);
       const same = others.filter((c) => c.getAttribute('data-cat') === cat);
       const picks = same.concat(others.filter((c) => !same.includes(c))).slice(0, 3);
       if (!picks.length) return;
