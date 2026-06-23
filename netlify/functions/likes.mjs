@@ -14,7 +14,7 @@ export default async (req) => {
     return new Response(JSON.stringify({ error: 'invalid slug' }), { status: 400, headers: HEADERS });
   }
 
-  const store = getStore('article-likes');
+  const store = getStore({ name: 'article-likes', consistency: 'strong' });
   const key = slug.replace(/^\//, ''); // cheile Blobs nu pot începe cu „/"
 
   if (req.method === 'POST') {
