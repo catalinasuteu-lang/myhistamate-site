@@ -605,6 +605,17 @@ img { display: block; max-width: 100%; }
 .faq-a p { margin: 0 0 12px; }
 .faq-a a { color: var(--coral); font-weight: 600; }
 
+/* jurnal de simptome — tabel printabil */
+.journal-table { width: 100%; border-collapse: collapse; margin: 26px 0 10px; font-size: 14px; }
+.journal-table th, .journal-table td { border: 1px solid var(--hairline); padding: 10px 9px; text-align: left; vertical-align: top; }
+.journal-table th { background: var(--cream-2); font-weight: 700; color: var(--navy); font-size: 12.5px; letter-spacing: .02em; }
+.journal-table td { height: 40px; }
+.journal-legend { font-size: 14.5px; color: var(--muted); margin-top: 6px; }
+@media print {
+  .journal-table { font-size: 10.5px; }
+  .journal-table th, .journal-table td { padding: 7px 6px; }
+}
+
 /* ghid — bară de acțiuni (Salvează ca PDF) + listă cu bife */
 .guide-actions { margin: 22px 0 8px; }
 .guide-check { list-style: none; padding: 0; margin: 0 0 22px; }

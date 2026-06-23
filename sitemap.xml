@@ -49,6 +49,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.ro/faq.html"/>
   </url>
   <url>
+    <loc>https://myhistamate.ro/jurnal.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/jurnal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/jurnal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.ro/jurnal.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/jurnal.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/jurnal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/jurnal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.ro/jurnal.html"/>
+  </url>
+  <url>
     <loc>https://myhistamate.ro/blog/alcool-si-hit.html</loc>
     <lastmod>2026-06-22</lastmod>
     <priority>0.6</priority>
