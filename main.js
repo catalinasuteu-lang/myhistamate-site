@@ -144,3 +144,12 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+/* Cloudflare Web Analytics — privacy-first, cookieless (loads on every page) */
+(function () {
+  var s = document.createElement('script');
+  s.defer = true;
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.setAttribute('data-cf-beacon', '{"token": "86d134dd1e9b4bf98fa3b24adc03822d"}');
+  document.head.appendChild(s);
+})();
