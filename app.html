@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de așteptare — Aplicația MyHistamate</title>
+<meta name="description" content="Intră pe lista de așteptare pentru aplicația MyHistamate și fii printre primii care o testează. Fără spam — doar un mesaj când lansăm.">
+<meta name="theme-color" content="#F7F4F0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Intră pe lista de așteptare — Aplicația MyHistamate">
+<meta property="og:description" content="Construiesc o aplicație pentru viața cu HIT. Lasă-ți adresa și te anunț prima când deschidem testarea.">
+<meta property="og:image" content="https://myhistamate.ro/brand/web/icon-512.png">
+<meta property="og:locale" content="ro_RO">
+<link rel="icon" type="image/svg+xml" href="/brand/web/favicon.svg">
+<link rel="alternate icon" href="/brand/web/favicon-32.png">
+<link rel="apple-touch-icon" href="/brand/web/apple-touch-icon-180.png">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="canonical" href="https://myhistamate.ro/app.html">
+<link rel="alternate" hreflang="ro" href="https://myhistamate.ro/app.html">
+<link rel="alternate" hreflang="en" href="https://myhistamate.com/en/app.html">
+<link rel="alternate" hreflang="x-default" href="https://myhistamate.ro/app.html">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Sari la conținut</a>
+
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a class="logo" href="/" aria-label="MyHistamate — acasă">
+      <span class="logo-mark">
+        <svg viewBox="0 0 40 40" width="100%" height="100%" aria-hidden="true">
+          <defs><clipPath id="lvlHead"><circle cx="20" cy="20" r="13"/></clipPath></defs>
+          <g clip-path="url(#lvlHead)">
+            <rect x="6" y="22" width="28" height="14" fill="#E8603C"/>
+            <rect x="6" y="20.5" width="28" height="1.6" fill="#1A2E3B" opacity="0.85"/>
+          </g>
+          <circle cx="20" cy="20" r="17" fill="none" stroke="#1A2E3B" stroke-width="2.4"/>
+        </svg>
+      </span>
+      <span class="logo-text">My<span class="hl">Hista</span>mate</span>
+    </a>
+    <nav class="nav-links" aria-label="Navigație principală">
+      <a href="/#poveste">Povestea</a>
+      <a href="/#gasesti">Ce găsești</a>
+      <a href="/#resurse">Resurse</a>
+      <a href="/blog.html">Blog</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://myhistamate.com/en/app.html" class="lang-switch" hreflang="en" aria-label="Switch to English" style="font-weight:700;letter-spacing:.04em;font-size:.82rem;opacity:.7;margin-right:4px">EN</a>
+      <a href="/#newsletter" class="btn btn-primary nav-cta">Primește ghidurile <span class="arrow">→</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Meniu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#poveste">Povestea</a>
+  <a href="/#gasesti">Ce găsești</a>
+  <a href="/#resurse">Resurse</a>
+  <a href="/blog.html">Blog</a>
+  <a href="/#newsletter" class="btn btn-primary">Primește ghidurile →</a>
+</div>
+
+<main id="main" class="article">
+  <div class="article-wrap" style="padding-top:130px">
+    <a class="article-back" href="/">← Înapoi la site</a>
+    <p class="eyebrow">În curând · aplicația MyHistamate</p>
+    <h1>Intră pe lista de așteptare</h1>
+    <p class="article-lead">Construiesc o aplicație care face, automat, tot ce fac eu acum manual ca să-mi țin histamina sub control. Nu pot să-ți dezvălui încă tot — dar e ceva ce mi-aș fi dorit din toată inima să fi existat de la început.</p>
+
+    <div class="article-body">
+      <p>Dacă vrei să fii printre primii care o testează, lasă-mi adresa de email mai jos. Te anunț prima când deschidem testarea — și atât.</p>
+
+      <form class="app-form" id="appForm" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate style="margin-top:18px">
+        <input type="hidden" name="form-name" value="waitlist">
+        <input type="hidden" name="source" value="pagina-app">
+        <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
+        <div class="field">
+          <label for="appEmail" class="visually-hidden">adresa ta de email</label><input type="email" id="appEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
+          <button type="submit" class="btn btn-primary">Înscrie-te pe lista de așteptare <span class="arrow">→</span></button>
+        </div>
+        <p class="nl-note">Fără spam. Doar un mesaj când lansăm. 💗</p>
+        <p class="form-success" id="appSuccess" hidden>Ești pe listă! Te anunț prima când deschidem testarea. 💛</p>
+      </form>
+
+      <div class="article-note">
+        <strong>Cât despre confidențialitate:</strong> îți folosesc adresa doar ca să te anunț despre aplicație. Te poți dezabona oricând. Detalii în <a href="/confidentialitate.html">Politica de confidențialitate</a>.
+      </div>
+    </div>
+
+    <div class="article-end">
+      <p class="article-end-q">Până atunci?</p>
+      <p>Am ghiduri gratuite și articole scrise din experiență — un loc bun de pornire.</p>
+      <a href="/#resurse" class="btn btn-primary">Vezi ghidurile gratuite <span class="arrow">→</span></a>
+      <a href="/blog.html" class="article-end-back">← Vezi blogul</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="/">
+        <span class="logo-mark">
+          <svg viewBox="0 0 40 40" width="100%" height="100%" aria-hidden="true">
+            <defs><clipPath id="lvlFoot"><circle cx="20" cy="20" r="13"/></clipPath></defs>
+            <g clip-path="url(#lvlFoot)">
+              <rect x="6" y="22" width="28" height="14" fill="#E8603C"/>
+              <rect x="6" y="20.5" width="28" height="1.6" fill="#FFFFFF" opacity="0.85"/>
+            </g>
+            <circle cx="20" cy="20" r="17" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+          </svg>
+        </span>
+        <span class="logo-text" style="color:#fff">My<span class="hl">Hista</span>mate</span>
+      </a>
+      <p class="footer-tag">Despre viața cu intoleranță la histamină — sincer și practic.</p>
+      <p class="footer-tag" style="margin-top:10px">Scrie-mi: <a href="mailto:hello@myhistamate.com" style="color:#fff;text-decoration:underline">hello@myhistamate.com</a></p>
+    </div>
+    <nav class="footer-col">
+      <h4>Site</h4>
+      <a href="/#poveste">Povestea</a>
+      <a href="/#gasesti">Ce găsești</a>
+      <a href="/#resurse">Resurse</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/faq.html">Întrebări frecvente</a>
+      <a href="/termeni.html">Termeni și condiții</a>
+      <a href="/confidentialitate.html">Confidențialitate</a>
+    </nav>
+    <nav class="footer-col">
+      <h4>Resurse</h4>
+      <a href="/#resurse">Ghidul restaurantului</a>
+      <a href="/#resurse">Prima săptămână</a>
+      <a href="/jurnal.html">Jurnal de simptome</a>
+    </nav>
+    <div class="footer-col">
+      <h4>În curând</h4>
+      <p class="footer-app">MyHistamate App<br><span>iOS &amp; Android · jurnal + analiză meniu</span></p>
+      <a href="/app.html" class="btn btn-outline btn-foot">Lista de așteptare →</a>
+    </div>
+  </div>
+  <div class="container footer-legal">
+    <p class="disclaimer"><strong>MyHistamate nu oferă sfaturi medicale.</strong> Conținutul de pe acest site reflectă experiența personală a autoarei și nu înlocuiește consultul unui medic specialist.</p>
+    <p class="copyr">© 2026 MyHistamate · myhistamate.ro · myhistamate.com</p>
+    <p class="copyr"><a href="/termeni.html" style="color:inherit;text-decoration:underline">Termeni și condiții</a> · <a href="/confidentialitate.html" style="color:inherit;text-decoration:underline">Confidențialitate</a></p>
+  </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

@@ -33,6 +33,22 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.ro/blog.html"/>
   </url>
   <url>
+    <loc>https://myhistamate.ro/app.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/app.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.ro/app.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.com/en/app.html</loc>
+    <lastmod>2026-06-23</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/app.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.ro/app.html"/>
+  </url>
+  <url>
     <loc>https://myhistamate.ro/faq.html</loc>
     <lastmod>2026-06-23</lastmod>
     <priority>0.7</priority>
