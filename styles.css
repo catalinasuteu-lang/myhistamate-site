@@ -328,7 +328,7 @@ img { display: block; max-width: 100%; }
 .res-cover[data-cover="restaurant"] { background: linear-gradient(150deg, var(--teal), var(--teal-deep)); }
 .res-cover[data-cover="week"]       { background: linear-gradient(150deg, var(--coral), var(--coral-deep)); }
 .res-cover[data-cover="bucket"]     { background: linear-gradient(150deg, var(--gold), var(--gold-deep)); }
-.res-cover[data-cover="journal"]    { background: linear-gradient(150deg, var(--navy-700), var(--navy)); }
+.res-cover[data-cover="journal"]    { background: linear-gradient(150deg, #6FA37C, #4E8260); }
 .res-cover::after {
   content: ""; position: absolute; right: -40px; bottom: -60px;
   width: 180px; height: 180px; border-radius: 50%;
