@@ -10,12 +10,14 @@ const FILES = {
     guide_1_pdf: { file: 'ghid-restaurant.pdf', name: 'Ghidul restaurantului cu HIT' },
     guide_2_pdf: { file: 'ghid-prima-saptamana.pdf', name: 'Prima saptamana dupa diagnostic' },
     guide_3_pdf: { file: 'ghid-galeata.pdf', name: 'Galeata de histamina' },
+    guide_4_pdf: { file: 'ghid-jurnal.pdf', name: 'Jurnal de mese si simptome' },
     guide_all_pdf: { file: 'myhistamate-toate-ghidurile.pdf', name: 'Toate ghidurile' },
   },
   en: {
     guide_1_pdf: { file: 'en/guide-restaurant.pdf', name: 'The HIT restaurant guide' },
     guide_2_pdf: { file: 'en/guide-first-week.pdf', name: 'Your first week after diagnosis' },
     guide_3_pdf: { file: 'en/guide-bucket.pdf', name: 'The histamine bucket' },
+    guide_4_pdf: { file: 'en/guide-journal.pdf', name: 'Meal & symptom journal' },
     guide_all_pdf: { file: 'en/myhistamate-all-guides.pdf', name: 'All the guides' },
   },
 };
