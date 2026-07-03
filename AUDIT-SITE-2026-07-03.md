@@ -6,6 +6,21 @@
 > B1 (sitemap per domeniu: `sitemap.xml` = .com, `sitemap-ro.xml` + `robots-ro.txt` servite pe .ro prin redirect de domeniu), B2 (feed-uri), B3 (bug ghilimele — 7 articole aveau descrierea efectiv trunchiată; reparat + ghilimele tipografice), B4 (og:url/og:image absolut/Twitter cards peste tot), B5 (404.html bilingv), B6 (edge function: 301, query string păstrat, carve-out pagini auth, mapare despre↔about), B7 (CSP unic cu sursele pt /admin — DE VERIFICAT în browser după deploy), B8+B9 (config ghiduri curățat; panou: colecție EN + Ghid 4; cms-content.js pe paginile de blog), B10 (lang pe formulare RO, link limbă meniu mobil RO, footer-uri unificate, inLanguage consecvent), §3.3 (succes real la newsletter/waitlist).
 > CONSTRUITE: `despre.html` + `en/about.html` (+ Person/ProfilePage schema, byline cu link + timp de citire pe toate articolele), Organization + WebSite JSON-LD pe homepage-uri, `llms.txt`, x-default → EN peste tot, fonturi self-hosted pe paginile auth + noindex.
 > RĂMASE (blocate pe Cătălina): Brevo, GSC pentru .ro + retrimitere sitemap-uri, decizie slug-uri EN, decizie mini-tool alimente, test /admin în browser.
+>
+> **Verificat LIVE după deploy (toate OK):** `/`→301 `/en/`, query string păstrat la redirect, `.com/feed.xml`→`/en/feed.xml`, `despre.html`↔`en/about.html` mapate pe ambele domenii, paginile auth răspund 200 pe .com, sitemap-ul .ro nu mai conține loc-uri .com, 404 real + branduit, `/admin` are un singur header CSP cu unpkg, JSON-LD RO reparat, H2-uri-întrebare live.
+>
+> ## TODO pentru sesiunea următoare
+>
+> **Pot face singură (fără nimic de la owner), în ordinea impactului:**
+> 1. **Restructurare AEO pe restul de 19 articole** (paragraf „Pe scurt" sus + H2-uri formulate ca întrebări). Amânat ca owner să valideze mostra pe `galeata-histamina` + `histamina-continut-vs-eliberare`. Cel mai valoros rămas.
+> 2. **Pagină-pilon** „Ghid complet: intoleranța la histamină" care leagă toate cele 21 articole (cluster tematic SEO/AEO).
+> 3. **BreadcrumbList schema** pe articole (Acasă › Blog › Articol) — rich results.
+> 4. **Extindere FAQ** cu întrebări despre AFECȚIUNE (ce pot mânca, cât durează o criză, ce e DAO) — de confirmat tonul cu owner înainte.
+>
+> **Blocat pe owner (cel mai bun ROI acum — NU codul):**
+> - **GSC**: verificare proprietate **myhistamate.ro** (separată de .com) + Bing → retrimis ambele sitemap-uri. Fără asta, site-ul rămâne neindexat.
+> - **Brevo**: cont + cheie API (variabilă de mediu Netlify) → conectez formularele + double opt-in + welcome email cu ghidurile.
+> - Decizii: slug-uri EN în engleză (recomand DA — fac 301-urile), mini-tool alimente pe site, reCAPTCHA invizibil (din Netlify), test vizual `/admin`, poză+bio nouă pt Despre.
 
 Acoperire: tot codul din `Myhistamate web\site` (52 pagini HTML, main.js, cms-content.js, netlify.toml, edge function, funcții Netlify, admin) + site-ul LIVE (.com și .ro) + indexare/competiție + SEO/AEO/GEO.
 
