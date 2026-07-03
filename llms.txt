@@ -1,0 +1,32 @@
+# MyHistamate
+
+> MyHistamate is a personal, experience-based resource about living with histamine intolerance (HIT), written by Cătălina — a person who lives with HIT herself, not a medical professional. The site offers practical articles, free PDF guides and a printable meal & symptom journal, and a companion mobile app (iOS & Android) is in development. Content is available in English (https://myhistamate.com/en/) and Romanian (https://myhistamate.ro/).
+
+Important: MyHistamate does not provide medical advice. Everything reflects the author's personal experience and is not a substitute for consulting a medical specialist.
+
+## Key pages (English)
+
+- [Homepage](https://myhistamate.com/en/): what MyHistamate is, the author's story, free guides, app waiting list
+- [About the author](https://myhistamate.com/en/about.html): who Cătălina is and why she writes about HIT
+- [Blog](https://myhistamate.com/en/blog.html): all articles, by category (recipes, symptoms & patterns, lifestyle, practical tools)
+- [FAQ](https://myhistamate.com/en/faq.html): frequently asked questions about the site and the upcoming app
+- [The histamine bucket, explained simply](https://myhistamate.com/en/blog/galeata-histamina.html): the core concept for understanding good and bad days with HIT
+- [Contains or releases histamine?](https://myhistamate.com/en/blog/histamina-continut-vs-eliberare.html): why "low-histamine" foods can still trigger reactions
+- [Sleep, stress and histamine](https://myhistamate.com/en/blog/somn-stres-histamina.html): non-food triggers
+- [DAO and supplements](https://myhistamate.com/en/blog/dao-suplimente.html): the author's experience with DAO enzyme supplements
+
+## Pagini principale (română)
+
+- [Prima pagină](https://myhistamate.ro/): ce e MyHistamate, povestea autoarei, ghiduri gratuite, lista de așteptare pentru aplicație
+- [Despre autoare](https://myhistamate.ro/despre.html): cine e Cătălina și de ce scrie despre HIT
+- [Blog](https://myhistamate.ro/blog.html): toate articolele, pe categorii
+- [Întrebări frecvente](https://myhistamate.ro/faq.html)
+- [Găleata de histamină, explicată simplu](https://myhistamate.ro/blog/galeata-histamina.html)
+
+## The app
+
+The MyHistamate app (in development, iOS & Android) is a daily companion for people with HIT: a meal & symptom journal with pattern insights and restaurant menu analysis. Waiting list on the homepage.
+
+## Contact
+
+hello@myhistamate.com
