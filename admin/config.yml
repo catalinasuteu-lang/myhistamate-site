@@ -10,13 +10,17 @@ publish_mode: simple
 media_folder: assets
 public_folder: /assets
 
+# NOTĂ: PDF-urile ghidurilor NU se urcă din panou. Ele stau în /guides-gated
+# (blocat public) și sunt livrate de funcția download-guide după email.
+# Un ghid nou se adaugă din cod (vezi PROIECT-MYHISTAMATE.md §6).
+
 collections:
   - name: continut
     label: "Conținutul site-ului"
     description: "Editezi textele paginii. Designul nu se schimbă de aici."
     files:
       - name: homepage
-        label: "Pagina principală"
+        label: "Pagina principală (română)"
         file: content.json
         description: "Sfat: pune ** în jurul cuvintelor pe care le vrei portocalii. Ex: **intoleranță la histamină**"
         fields:
@@ -46,16 +50,15 @@ collections:
 
           # ---- RESURSE ----
           - { label: "Resurse · titlu", name: res_title, widget: text }
-          - { label: "Resurse · subtitlu", name: res_lead, widget: text }
+          - { label: "Resurse · subtitlu", name: res_lead, widget: text, required: false }
           - { label: "Ghid 1 · titlu", name: guide_1_title, widget: string }
           - { label: "Ghid 1 · text", name: guide_1_text, widget: text }
-          - { label: "Ghid 1 · fișier PDF (lasă gol până e gata)", name: guide_1_pdf, widget: file, required: false }
           - { label: "Ghid 2 · titlu", name: guide_2_title, widget: string }
           - { label: "Ghid 2 · text", name: guide_2_text, widget: text }
-          - { label: "Ghid 2 · fișier PDF (lasă gol până e gata)", name: guide_2_pdf, widget: file, required: false }
           - { label: "Ghid 3 · titlu", name: guide_3_title, widget: string }
           - { label: "Ghid 3 · text", name: guide_3_text, widget: text }
-          - { label: "Ghid 3 · fișier PDF (lasă gol până e gata)", name: guide_3_pdf, widget: file, required: false }
+          - { label: "Ghid 4 · titlu", name: guide_4_title, widget: string }
+          - { label: "Ghid 4 · text", name: guide_4_text, widget: text }
 
           # ---- NEWSLETTER ----
           - { label: "Newsletter · titlu", name: nl_title, widget: text }
@@ -68,3 +71,56 @@ collections:
 
           # ---- FOOTER ----
           - { label: "Footer · descriere", name: footer_tagline, widget: text }
+
+      - name: homepage_en
+        label: "Pagina principală (engleză)"
+        file: en/content.json
+        description: "Textele versiunii în engleză (myhistamate.com/en). Aceleași reguli: ** = portocaliu, * = italic."
+        fields:
+          # ---- HERO ----
+          - { label: "Hero · text mic de sus (EN)", name: hero_eyebrow, widget: string }
+          - { label: "Hero · titlu mare (EN)", name: hero_title, widget: text }
+          - { label: "Hero · paragraf de prezentare (EN)", name: hero_lead, widget: text }
+
+          # ---- POVESTEA ----
+          - { label: "Povestea · titlu (EN)", name: story_title, widget: text }
+          - { label: "Povestea · paragraf 1 (EN)", name: story_p1, widget: text }
+          - { label: "Povestea · paragraf 2 (EN)", name: story_p2, widget: text }
+          - { label: "Povestea · paragraf 3 (EN)", name: story_p3, widget: text }
+          - { label: "Povestea · citat evidențiat (EN)", name: story_quote, widget: text }
+
+          # ---- CE GĂSEȘTI ----
+          - { label: "Ce găsești · titlu (EN)", name: finds_title, widget: text }
+          - { label: "Ce găsești · subtitlu (EN)", name: finds_lead, widget: text }
+          - { label: "Card 1 · titlu (EN)", name: find_1_title, widget: string }
+          - { label: "Card 1 · text (EN)", name: find_1_text, widget: text }
+          - { label: "Card 2 · titlu (EN)", name: find_2_title, widget: string }
+          - { label: "Card 2 · text (EN)", name: find_2_text, widget: text }
+          - { label: "Card 3 · titlu (EN)", name: find_3_title, widget: string }
+          - { label: "Card 3 · text (EN)", name: find_3_text, widget: text }
+          - { label: "Card 4 · titlu (EN)", name: find_4_title, widget: string }
+          - { label: "Card 4 · text (EN)", name: find_4_text, widget: text }
+
+          # ---- RESURSE ----
+          - { label: "Resurse · titlu (EN)", name: res_title, widget: text }
+          - { label: "Resurse · subtitlu (EN)", name: res_lead, widget: text, required: false }
+          - { label: "Ghid 1 · titlu (EN)", name: guide_1_title, widget: string }
+          - { label: "Ghid 1 · text (EN)", name: guide_1_text, widget: text }
+          - { label: "Ghid 2 · titlu (EN)", name: guide_2_title, widget: string }
+          - { label: "Ghid 2 · text (EN)", name: guide_2_text, widget: text }
+          - { label: "Ghid 3 · titlu (EN)", name: guide_3_title, widget: string }
+          - { label: "Ghid 3 · text (EN)", name: guide_3_text, widget: text }
+          - { label: "Ghid 4 · titlu (EN)", name: guide_4_title, widget: string }
+          - { label: "Ghid 4 · text (EN)", name: guide_4_text, widget: text }
+
+          # ---- NEWSLETTER ----
+          - { label: "Newsletter · titlu (EN)", name: nl_title, widget: text }
+          - { label: "Newsletter · text (EN)", name: nl_lead, widget: text }
+
+          # ---- APLICAȚIE ----
+          - { label: "Aplicație · titlu (EN)", name: app_title, widget: text }
+          - { label: "Aplicație · text (EN)", name: app_lead, widget: text }
+          - { label: "Aplicație · linia dinainte de formular (EN)", name: app_line, widget: text }
+
+          # ---- FOOTER ----
+          - { label: "Footer · descriere (EN)", name: footer_tagline, widget: text }

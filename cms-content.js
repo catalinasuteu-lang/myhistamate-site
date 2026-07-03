@@ -27,11 +27,9 @@
         el.innerHTML = render(data[key]);
       }
     });
-    // Leagă fișierul PDF al fiecărui ghid (dacă a fost urcat din panou)
-    document.querySelectorAll('[data-pdf-key]').forEach(function (el) {
-      var key = el.getAttribute('data-pdf-key');
-      if (data[key]) el.setAttribute('data-pdf', data[key]);
-    });
+    // NOTĂ: PDF-urile ghidurilor NU se leagă de aici — livrarea e prin funcția
+    // download-guide (data-pdf-key -> mapare hardcodată server-side), ca să
+    // rămână în spatele email-gate-ului.
   }
   fetch('content.json', { cache: 'no-store' })
     .then(function (r) { return r.ok ? r.json() : null; })

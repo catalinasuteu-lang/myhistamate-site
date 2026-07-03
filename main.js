@@ -10,15 +10,16 @@
   const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
   /* Send a form to Netlify Forms via AJAX (works once deployed on Netlify).
-     We show success optimistically so the UX is identical locally, where
-     there is no Netlify backend — the POST simply no-ops on error. */
+     Resolves with the fetch Response (or rejects) — CALLERS decide how strict
+     să fie: newsletter/waitlist verifică rezultatul, lead-ul de la ghiduri e
+     best-effort (PDF-ul se livrează oricum prin funcție). */
   function submitToNetlify(form) {
     const data = new URLSearchParams(new FormData(form)).toString();
     return fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: data,
-    }).catch(() => { /* offline / local preview — ignore */ });
+    });
   }
 
   /* "Citește în continuare" — articole din aceeași categorie, la finalul unui articol.
@@ -219,20 +220,37 @@
       }, 1400);
     }
 
-    /* email forms (newsletter + waitlist) */
+    /* email forms (newsletter + waitlist) — succesul se arată DOAR dacă
+       trimiterea chiar a reușit; altfel mesaj de eroare cu fallback pe email. */
     function wireForm(formSel, inputSel, successSel) {
       const form = $(formSel); if (!form) return;
       const input = $(inputSel), success = $(successSel), field = input.closest('.field');
+      const okText = success.textContent;
+      const isEN = location.pathname.indexOf('/en/') === 0;
+      const errText = isEN
+        ? "Oops, something went wrong. Please try again, or write to me at hello@myhistamate.com and I'll add you myself. 💛"
+        : 'Ups, ceva n-a mers. Mai încearcă o dată sau scrie-mi la hello@myhistamate.com și te adaug eu. 💛';
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!isEmail(input.value)) { field.classList.add('invalid'); input.focus(); return; }
         field.classList.remove('invalid');
-        submitToNetlify(form);
-        field.style.display = 'none';
-        const note = form.querySelector('.nl-note'); if (note) note.style.display = 'none';
-        success.hidden = false;
+        const btn = field.querySelector('button[type="submit"]');
+        if (btn) btn.disabled = true;
+        submitToNetlify(form)
+          .then((r) => {
+            if (!r || !r.ok) throw new Error('submit failed');
+            field.style.display = 'none';
+            const note = form.querySelector('.nl-note'); if (note) note.style.display = 'none';
+            success.textContent = okText;
+            success.hidden = false;
+          })
+          .catch(() => {
+            if (btn) btn.disabled = false;
+            success.textContent = errText;
+            success.hidden = false;
+          });
       });
-      input.addEventListener('input', () => field.classList.remove('invalid'));
+      input.addEventListener('input', () => { field.classList.remove('invalid'); if (!success.hidden && success.textContent === errText) success.hidden = true; });
     }
     wireForm('#nlForm', '#nlEmail', '#nlSuccess');
     wireForm('#appForm', '#appEmail', '#appSuccess');
@@ -273,7 +291,7 @@
     dlForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (!isEmail(dlInput.value)) { dlField.classList.add('invalid'); dlInput.focus(); return; }
-      submitToNetlify(dlForm); // captură lead (Netlify Forms)
+      submitToNetlify(dlForm).catch(() => {}); // captură lead best-effort (PDF-ul se livrează oricum)
       const lang = location.pathname.indexOf('/en/') === 0 ? 'en' : 'ro';
       const M = lang === 'en'
         ? { wait: 'One sec, preparing your guide… ⏳', ready: 'Done! Tap below to open the guide. 📨', err: "Oops, something went wrong. Write to me at hello@myhistamate.com and I'll send it over. 💛" }
