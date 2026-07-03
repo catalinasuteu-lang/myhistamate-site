@@ -9,10 +9,15 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://myhistamate.ro/">
 <meta property="og:title" content="MyHistamate — viața cu intoleranță la histamină, pe înțelesul tău">
 <meta property="og:description" content="Lucruri practice despre HIT, din experiență. Ghiduri gratuite, newsletter și o aplicație în curând.">
-<meta property="og:image" content="brand/web/icon-512.png">
+<meta property="og:image" content="https://myhistamate.ro/brand/web/icon-512.png">
 <meta property="og:locale" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MyHistamate — viața cu intoleranță la histamină, pe înțelesul tău">
+<meta name="twitter:description" content="Lucruri practice despre HIT, din experiență. Ghiduri gratuite, newsletter și o aplicație în curând.">
+<meta name="twitter:image" content="https://myhistamate.ro/brand/web/icon-512.png">
 
 <link rel="icon" type="image/svg+xml" href="brand/web/favicon.svg">
 <link rel="alternate icon" href="brand/web/favicon-32.png">
@@ -21,9 +26,43 @@
 <link rel="canonical" href="https://myhistamate.ro/">
 <link rel="alternate" hreflang="ro" href="https://myhistamate.ro/">
 <link rel="alternate" hreflang="en" href="https://myhistamate.com/en/">
-<link rel="alternate" hreflang="x-default" href="https://myhistamate.ro/">
+<link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/">
 <link rel="alternate" type="application/rss+xml" title="MyHistamate — Blog" href="/feed.xml">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://myhistamate.com/#organization",
+      "name": "MyHistamate",
+      "url": "https://myhistamate.ro/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://myhistamate.ro/brand/web/icon-512.png"
+      },
+      "email": "hello@myhistamate.com",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://myhistamate.com/#catalina",
+        "name": "Cătălina",
+        "url": "https://myhistamate.ro/despre.html",
+        "description": "Autoarea MyHistamate. Trăiește cu intoleranță la histamină și scrie din experiență directă despre viața cu HIT."
+      },
+      "description": "Conținut practic, ghiduri gratuite și o aplicație pentru viața cu intoleranță la histamină (HIT)."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://myhistamate.ro/#website",
+      "name": "MyHistamate",
+      "url": "https://myhistamate.ro/",
+      "inLanguage": "ro",
+      "publisher": { "@id": "https://myhistamate.com/#organization" }
+    }
+  ]
+}
+</script>
 </head>
 <body data-hero="split" data-density="comfy">
 <a class="skip-link" href="#top">Sari la conținut</a>
@@ -66,6 +105,7 @@
   <a href="#gasesti">Ce găsești</a>
   <a href="#resurse">Resurse</a>
   <a href="/blog.html">Blog</a>
+  <a href="https://myhistamate.com/en/" hreflang="en">English</a>
   <a href="#newsletter" class="btn btn-primary">Primește ghidurile →</a>
 </div>
 
@@ -123,7 +163,7 @@
           <div class="post-cover"><img src="/assets/blog-somn.jpg" alt=""><span class="post-cover-tag">Din experiență</span></div>
           <div class="post-body">
             <h3>Somnul, stresul și histamina: declanșatorii care nu sunt mâncare</h3>
-            <p>Am zile proaste chiar și când mănânc „perfect". Despre declanșatorii care nu țin de farfurie.</p>
+            <p>Am zile proaste chiar și când mănânc „perfect”. Despre declanșatorii care nu țin de farfurie.</p>
             <span class="post-readmore">Citește articolul →</span>
           </div>
         </a>
@@ -147,7 +187,7 @@
           <div class="post-cover"><img src="/assets/blog-diagnostic.jpg" alt=""><span class="post-cover-tag">Din experiență</span></div>
           <div class="post-body">
             <h3>Ce faci când afli că ai HIT: frustrare, disperare și un nou început</h3>
-            <p>Ușurare că există un nume, panică la prima listă de „interzise". Cum am trecut mai departe.</p>
+            <p>Ușurare că există un nume, panică la prima listă de „interzise”. Cum am trecut mai departe.</p>
             <span class="post-readmore">Citește articolul →</span>
           </div>
         </a>
@@ -271,6 +311,7 @@
         <p data-cms="app_line">Nu e gata încă. Dar dacă vrei să fii printre primii care o testează:</p>
         <form class="app-form" id="appForm" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="waitlist">
+          <input type="hidden" name="lang" value="ro">
           <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
           <div class="field">
             <label for="appEmail" class="visually-hidden">adresa ta de email</label><input type="email" id="appEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
@@ -339,6 +380,7 @@
         <p class="lead" data-cms="nl_lead">Fără program fix și fără spam. Primești un email când public un articol nou sau când descopăr ceva care m-a ajutat cu adevărat — plus vești despre aplicație, înaintea tuturor.</p>
         <form class="nl-form" id="nlForm" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="newsletter">
+          <input type="hidden" name="lang" value="ro">
           <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
           <div class="field">
             <label for="nlEmail" class="visually-hidden">adresa ta de email</label><input type="email" id="nlEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
@@ -376,6 +418,7 @@
     <nav class="footer-col">
       <h4>Site</h4>
       <a href="#poveste">Povestea</a>
+      <a href="/despre.html">Despre mine</a>
       <a href="#gasesti">Ce găsești</a>
       <a href="#resurse">Resurse</a>
       <a href="/blog.html">Blog</a>
@@ -411,6 +454,7 @@
     <p>Lasă-mi adresa de email și îți deschid ghidul pe loc. Te adaug și pe listă, ca să-ți scriu când am ceva nou (te dezabonezi oricând).</p>
     <form id="dlForm" name="guide-download" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
       <input type="hidden" name="form-name" value="guide-download">
+      <input type="hidden" name="lang" value="ro">
       <input type="hidden" name="guide" id="dlGuide" value="">
       <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
       <div class="field">
