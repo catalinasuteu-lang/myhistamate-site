@@ -216,4 +216,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/histamina-continut-vs-eliberare.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/histamina-continut-vs-eliberare.html"/>
   </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/myhistamate-in-testare.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>
