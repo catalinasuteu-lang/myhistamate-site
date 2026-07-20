@@ -431,6 +431,20 @@ img { display: block; max-width: 100%; }
 .ui-tip-text { font-size: 12.5px; color: var(--navy); margin-top: 2px; line-height: 1.35; }
 .ui-soft { margin-top: auto; background: var(--coral-wash); border-radius: 16px; padding: 13px 14px; display: flex; gap: 11px; align-items: center; }
 .ui-soft p { font-family: var(--serif); font-style: italic; font-size: 13.5px; color: var(--navy); line-height: 1.3; }
+/* card „Săptămâna ta" (oglindește ecranul real Acasă) */
+.ui-week { background: #fff; border: 1px solid var(--hairline); border-radius: 18px; padding: 14px 14px 12px; box-shadow: var(--shadow-sm); }
+.ui-week-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 11px; }
+.ui-week-title { font-family: var(--serif); font-size: 15px; color: var(--navy); font-weight: 600; }
+.ui-week-nav { color: var(--teal-deep); font-size: 13px; letter-spacing: 2px; }
+.ui-week-row { display: flex; justify-content: space-between; }
+.ui-day { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.ui-pill { width: 26px; height: 26px; border-radius: 9px; background: var(--cream-2); border: 1px solid var(--hairline); }
+.ui-pill.on { background: #1A8C8A; border-color: #1A8C8A; }
+.ui-day span { font-size: 10px; color: var(--muted); font-weight: 600; }
+.ui-day.today span { color: var(--navy); font-weight: 800; }
+.ui-week-legend { display: flex; gap: 9px; margin-top: 11px; padding-top: 10px; border-top: 1px solid var(--hairline); flex-wrap: wrap; }
+.ui-leg { display: inline-flex; align-items: center; gap: 4px; font-size: 8.5px; color: var(--muted); font-weight: 600; }
+.ui-leg i { width: 8px; height: 8px; border-radius: 3px; display: inline-block; }
 
 /* ============================================================
    FOOTER
