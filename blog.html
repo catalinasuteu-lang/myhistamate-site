@@ -321,10 +321,10 @@
   <section class="section app" id="app">
     <div class="container app-grid">
       <div class="app-copy reveal">
-        <p class="eyebrow">În curând · aplicația MyHistamate</p>
+        <p class="eyebrow">Acum în testare · aplicația MyHistamate</p>
         <h2 data-cms="app_title">Metoda mea, într-o aplicație.</h2>
-        <p class="lead" data-cms="app_lead">Folosesc deja, zi de zi, o metodă care mă ajută să-mi țin histamina sub control — și chiar funcționează pentru mine. Acum o transform într-o aplicație. Nu pot să-ți dezvălui încă tot, dar e ceva ce mi-aș fi dorit din toată inima să fi existat de la început.</p>
-        <p data-cms="app_line">Nu e gata încă. Dar dacă vrei să fii printre primii care o testează:</p>
+        <p class="lead" data-cms="app_lead">Folosesc deja, zi de zi, o metodă care mă ajută să-mi țin histamina sub control — și chiar funcționează pentru mine. Am transformat-o într-o aplicație: un jurnal care se completează în două minute, alimente pe toleranțele tale și un asistent căruia îi scrii „de ce m-am simțit rău ieri?" și îți răspunde pe baza jurnalului tău, nu generic. E ceea ce mi-aș fi dorit din toată inima să fi existat de la început.</p>
+        <p data-cms="app_line">A intrat oficial în testare. Înscrie-te pe lista de așteptare și prinzi unul dintre valurile următoare — sau acces din prima zi la lansare:</p>
         <form class="app-form" id="appForm" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="waitlist">
           <p class="hp-field"><label>Nu completa: <input name="bot-field"></label></p>
@@ -332,8 +332,8 @@
             <label for="appEmail" class="visually-hidden">adresa ta de email</label><input type="email" id="appEmail" name="email" placeholder="adresa ta de email" required autocomplete="email">
             <button type="submit" class="btn btn-primary">Înscrie-te pe lista de așteptare <span class="arrow">→</span></button>
           </div>
-          <p class="nl-note">Fără spam. Doar un mesaj când lansăm. 💗</p>
-          <p class="form-success" id="appSuccess" hidden>Ești pe listă! Te anunț prima când deschidem testarea. 💛</p>
+          <p class="nl-note">Fără spam. Doar vești despre testare și lansare. 💗</p>
+          <p class="form-success" id="appSuccess" hidden>Ești pe listă! Te anunț când urmează valul tău de testare. 💛</p>
         </form>
       </div>
       <div class="app-mockup reveal">
@@ -351,33 +351,54 @@
                 </div>
                 <span class="ui-avatar"></span>
               </div>
-              <div class="ui-hero">
-                <div>
-                  <span class="ui-eyebrow">Astăzi</span>
-                  <p class="ui-hero-title">O zi liniștită</p>
-                  <p class="ui-hero-sub">Te descurci frumos 🤍</p>
+              <div class="ui-week">
+                <div class="ui-week-head">
+                  <span class="ui-week-title">Săptămâna ta</span>
+                  <span class="ui-week-nav">‹ ›</span>
                 </div>
-                <span class="ui-gauge">
-                  <svg viewBox="0 0 48 48" width="56" height="56" aria-hidden="true">
-                    <defs><clipPath id="uiLvl"><circle cx="24" cy="24" r="17"/></clipPath></defs>
-                    <g clip-path="url(#uiLvl)">
-                      <rect x="2" y="31" width="44" height="20" fill="#1A8C8A"/>
-                      <rect x="2" y="29.5" width="44" height="1.8" fill="#14706E"/>
+                <div class="ui-week-row">
+                  <span class="ui-day today"><i class="ui-pill on"></i><span>azi</span></span>
+                  <span class="ui-day"><i class="ui-pill"></i><span>Ma</span></span>
+                  <span class="ui-day"><i class="ui-pill"></i><span>Mi</span></span>
+                  <span class="ui-day"><i class="ui-pill"></i><span>J</span></span>
+                  <span class="ui-day"><i class="ui-pill"></i><span>V</span></span>
+                  <span class="ui-day"><i class="ui-pill"></i><span>S</span></span>
+                  <span class="ui-day"><i class="ui-pill"></i><span>D</span></span>
+                </div>
+                <div class="ui-week-legend">
+                  <span class="ui-leg"><i style="background:#1A8C8A"></i>zi bună</span>
+                  <span class="ui-leg"><i style="background:#F5A623"></i>atenție</span>
+                  <span class="ui-leg"><i style="background:#E8603C"></i>zi grea</span>
+                  <span class="ui-leg"><i style="background:#F1ECE4;border:1px solid #E5DCCF"></i>fără jurnal</span>
+                </div>
+              </div>
+              <div class="ui-reintro">
+                <span class="ui-eyebrow">Se testează acum</span>
+                <p class="ui-reintro-title">Ciuperci · ziua 2 din 3</p>
+                <p class="ui-reintro-sub">Cum te-ai simțit azi? Bifează →</p>
+              </div>
+              <div class="ui-obs">
+                <span class="ui-obs-mark">
+                  <svg viewBox="0 0 40 40" width="20" height="20" aria-hidden="true">
+                    <defs><clipPath id="uiObsLvl"><circle cx="20" cy="20" r="13"/></clipPath></defs>
+                    <g clip-path="url(#uiObsLvl)">
+                      <rect x="6" y="22" width="28" height="14" fill="#E8603C"/>
+                      <rect x="6" y="20.5" width="28" height="1.6" fill="#1A2E3B" opacity="0.85"/>
                     </g>
-                    <circle cx="24" cy="24" r="21" fill="none" stroke="#1A2E3B" stroke-width="2.6"/>
+                    <circle cx="20" cy="20" r="17" fill="none" stroke="#1A2E3B" stroke-width="2.4"/>
                   </svg>
                 </span>
-              </div>
-              <div class="ui-tip">
-                <span class="ui-tip-ic">💧</span>
                 <div>
-                  <span class="ui-eyebrow ui-coral">Sfatul zilei</span>
-                  <p class="ui-tip-text">Un pahar de apă înainte de masă.</p>
+                  <span class="ui-eyebrow">Ce a observat Histamate</span>
+                  <p class="ui-obs-text">Zilele bune au avut, în general, mese mai simple seara.</p>
                 </div>
               </div>
-              <div class="ui-soft">
-                <span class="ui-tip-ic">🌿</span>
-                <p>Pas cu pas. Azi e o zi bună.</p>
+              <div class="ui-tip">
+                <span class="ui-tip-ic">❄️</span>
+                <div>
+                  <span class="ui-eyebrow ui-coral">Sfatul zilei</span>
+                  <p class="ui-tip-text">Resturile adună histamină. Congelează-le imediat.</p>
+                </div>
               </div>
             </div>
           </div>
