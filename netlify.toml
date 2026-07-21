@@ -42,6 +42,19 @@
   status = 404
   force = true
 
+# ---- Dezabonare cu un click din emailuri ----
+# Proxy (status 200) către funcția Supabase, ca linkul din email să fie pe
+# domeniul nostru, nu pe o adresă tehnică — arată mai de încredere și e mai bine
+# văzut de filtrele de spam. Query string-ul (adresa + semnătura) trece automat.
+# Merge și pe POST, pentru butonul nativ „Unsubscribe" din Gmail/Yahoo (RFC 8058).
+# Nu intră în conflict cu edge function-ul domain-lang: acela atinge doar rutele
+# de pagină ("/", "*/", "*.html"), iar "/dezabonare" nu e niciuna dintre ele.
+[[redirects]]
+  from = "/dezabonare"
+  to = "https://vooltkswkdxsmbbzgmzd.supabase.co/functions/v1/unsubscribe"
+  status = 200
+  force = true
+
 # ---- Fișiere per domeniu (sitemap / robots / feed) ----
 # Ambele domenii servesc același deploy, dar sitemap-ul și robots.txt trebuie
 # să conțină DOAR URL-urile domeniului respectiv (Google ignoră URL-urile de
