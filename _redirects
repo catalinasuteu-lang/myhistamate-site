@@ -1,0 +1,18 @@
+# Redirecționări permanente pentru paginile englezești redenumite (10 aug 2026).
+# Numele erau românești pe pagini englezești — se vedea inclusiv în fișa din
+# magazine, unde URL-ul politicii de confidențialitate e vizibil la review.
+#
+# Regulile de mai jos țin în viață vechile adrese: linkuri deja indexate, dar și
+# legăturile din fișierele aflate în lucru în alt loc, care încă trimit spre
+# numele vechi. Fără ele, subsolul paginilor englezești ar duce în 404.
+#
+# ⚠️ Redenumirea unei pagini EN cere DOUĂ lucruri, nu unul:
+#   1. o regulă aici, pentru vechea adresă /en/...
+#   2. o intrare în harta `renamed` din netlify/edge-functions/domain-lang.js,
+#      altfel .com/<nume-romanesc>.html trimite 301 către un /en/ inexistent.
+# Regulile din netlify.toml se aplică ÎNAINTEA acestui fișier; nu se suprapun.
+
+/en/confidentialitate.html            /en/privacy.html            301
+/en/termeni.html                      /en/terms.html              301
+/en/jurnal.html                       /en/symptom-journal.html    301
+/en/confidentialitate-aplicatie.html  /en/app-privacy.html        301

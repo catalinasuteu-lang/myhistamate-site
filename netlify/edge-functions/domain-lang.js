@@ -25,7 +25,16 @@ export default async (request) => {
   const go = (path) => Response.redirect(url.origin + path + url.search, 301);
 
   // Pages whose RO/EN filenames differ (everything else maps 1:1 by path).
-  const renamed = { "/despre.html": "/en/about.html" }; // RO path -> EN path
+  // ⚠️ Orice pagină EN redenumită TREBUIE trecută aici, altfel .com/<nume-ro>.html
+  // trimite 301 către un /en/<nume-ro>.html inexistent → 404. (Exact asta s-a
+  // întâmplat pe 10 aug, la redenumirea politicii aplicației.)
+  const renamed = {
+    "/despre.html": "/en/about.html",
+    "/confidentialitate.html": "/en/privacy.html",
+    "/confidentialitate-aplicatie.html": "/en/app-privacy.html",
+    "/termeni.html": "/en/terms.html",
+    "/jurnal.html": "/en/symptom-journal.html",
+  }; // RO path -> EN path
 
   if (onCom) {
     // English domain: route Romanian paths to their /en/ equivalent.
