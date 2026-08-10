@@ -216,4 +216,60 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/histamina-continut-vs-eliberare.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/histamina-continut-vs-eliberare.html"/>
   </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/myhistamate-in-testare.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/blog/myhistamate-in-testare.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/myhistamate-in-testare.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/myhistamate-in-testare.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/ecranul-de-start.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/blog/ecranul-de-start.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/ecranul-de-start.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/ecranul-de-start.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/o-zi-cu-myhistamate.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/blog/o-zi-cu-myhistamate.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/o-zi-cu-myhistamate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/o-zi-cu-myhistamate.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/scanez-meniul.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/blog/scanez-meniul.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/scanez-meniul.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/scanez-meniul.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/reintroduceri-ghidate.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/blog/reintroduceri-ghidate.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/reintroduceri-ghidate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/reintroduceri-ghidate.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/vacanta-meniuri-straine.html</loc>
+    <lastmod>2026-08-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/blog/vacanta-meniuri-straine.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/vacanta-meniuri-straine.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/vacanta-meniuri-straine.html"/>
+  </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/ce-nu-face-myhistamate.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/blog/ce-nu-face-myhistamate.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/ce-nu-face-myhistamate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/ce-nu-face-myhistamate.html"/>
+  </url>
 </urlset>
