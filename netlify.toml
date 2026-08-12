@@ -23,7 +23,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()"
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; img-src 'self' data: blob: https://avatars.githubusercontent.com https://raw.githubusercontent.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://unpkg.com; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com https://vooltkswkdxsmbbzgmzd.supabase.co https://api.netlify.com https://api.github.com https://raw.githubusercontent.com"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; img-src 'self' data: blob: https://avatars.githubusercontent.com https://raw.githubusercontent.com https://vooltkswkdxsmbbzgmzd.supabase.co; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self' https://vooltkswkdxsmbbzgmzd.supabase.co https://api.netlify.com https://api.github.com https://raw.githubusercontent.com"
 
 [[headers]]
   for = "/brand/*"

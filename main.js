@@ -321,11 +321,10 @@
   else init();
 })();
 
-/* Cloudflare Web Analytics — privacy-first, cookieless (loads on every page) */
-(function () {
-  var s = document.createElement('script');
-  s.defer = true;
-  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-  s.setAttribute('data-cf-beacon', '{"token": "86d134dd1e9b4bf98fa3b24adc03822d"}');
-  document.head.appendChild(s);
-})();
+/* Fără niciun script de statistică în pagină (11 aug 2026).
+   Aici era beacon-ul Cloudflare Web Analytics, cu un token care nu corespundea niciunui
+   cont: browserele vizitatorilor chiar trimiteau cereri către Cloudflare (IP, pagină,
+   user-agent), iar noi nu primeam nicio statistică în schimb — cel mai prost rezultat
+   posibil. Statisticile de trafic se citesc acum din înregistrările serverului Netlify,
+   care nu cer niciun script în pagină. Politicile de confidențialitate (RO + EN) au fost
+   actualizate în același timp. */
