@@ -272,4 +272,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/ce-nu-face-myhistamate.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/ce-nu-face-myhistamate.html"/>
   </url>
+  <url>
+    <loc>https://myhistamate.ro/blog/aplicatia-e-in-magazin.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://myhistamate.ro/blog/aplicatia-e-in-magazin.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://myhistamate.com/en/blog/aplicatia-e-in-magazin.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://myhistamate.com/en/blog/aplicatia-e-in-magazin.html"/>
+  </url>
 </urlset>
