@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Postări MyHistamate — panou de aprobare</title>
+<!--
+  Panoul de aprobare a postărilor sociale. Deschide-l cu dublu-click.
+  Vorbește direct cu Supabase (funcția social-review). Nimic nu se publică
+  până nu apeși „Aprobă" la postarea respectivă.
+  ⚠️ Fișierul conține cheia panoului — nu-l trimite nimănui.
+-->
+<style>
+  :root{
+    --hartie:#F3EDE1; --fundal:#EFE7DB; --navy:#1A2E3B; --teal:#14706E;
+    --coral:#E8603C; --gri:#8A949B; --linie:#E5DCCF; --alb:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--fundal);color:var(--navy);
+       font:16px/1.55 "Segoe UI",-apple-system,Arial,sans-serif}
+  .top{position:sticky;top:0;z-index:9;background:var(--navy);color:var(--hartie);
+       padding:16px 20px;box-shadow:0 2px 10px rgba(26,46,59,.25)}
+  .top h1{margin:0;font:600 20px/1.2 Georgia,"Times New Roman",serif}
+  .top p{margin:5px 0 0;font-size:13.5px;opacity:.85}
+  .bara{position:sticky;top:74px;z-index:8;background:var(--linie);
+        padding:10px 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .bara button{border:1px solid #C9BCA8;background:var(--hartie);color:var(--navy);
+        border-radius:999px;padding:7px 14px;font-size:13.5px;cursor:pointer;font-weight:600}
+  .bara button.activ{background:var(--navy);color:var(--hartie);border-color:var(--navy)}
+  .bara .spacer{flex:1}
+  .bara .reincarca{border-style:dashed}
+  main{max-width:860px;margin:0 auto;padding:20px}
+  .stare-globala{background:var(--alb);border:1px solid var(--linie);border-radius:14px;
+        padding:14px 18px;margin-bottom:16px;font-size:14.5px;color:var(--gri)}
+  .post{display:flex;gap:18px;background:var(--alb);border:1px solid var(--linie);
+        border-radius:18px;padding:16px;margin-bottom:16px}
+  .poza{flex:0 0 150px}
+  .poza img{width:150px;border-radius:12px;display:block;border:1px solid var(--linie)}
+  .fara-poza{width:150px;height:188px;border-radius:12px;background:var(--fundal);
+        display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gri)}
+  .corp{flex:1;min-width:0}
+  .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .nr{font-weight:800;color:var(--gri);font-size:13px}
+  .cand{font-size:13.5px;color:var(--gri)}
+  .chip{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;
+        padding:3px 10px;border-radius:999px}
+  .chip.draft{background:#FBEEE8;color:var(--coral)}
+  .chip.approved{background:#E3F0EF;color:var(--teal)}
+  .chip.published{background:var(--navy);color:var(--hartie)}
+  .chip.skipped{background:#ECECEC;color:var(--gri)}
+  .chip.failed{background:#FFE1E1;color:#B02020}
+  h2{margin:6px 0 12px;font:600 18px/1.35 Georgia,"Times New Roman",serif}
+  label{display:block;font-size:11.5px;font-weight:800;text-transform:uppercase;
+        letter-spacing:.08em;color:var(--gri);margin:0 0 5px}
+  textarea{width:100%;border:1px solid var(--linie);border-radius:12px;padding:12px;
+        font:15px/1.6 inherit;background:#FDFBF7;resize:vertical;color:var(--navy)}
+  textarea:focus{outline:2px solid var(--teal);outline-offset:-1px}
+  details{margin-top:10px}
+  summary{cursor:pointer;font-size:13.5px;color:var(--teal);font-weight:600}
+  details[open] summary{margin-bottom:6px}
+  .eroare-post{background:#FFE1E1;color:#B02020;padding:9px 12px;border-radius:10px;
+        font-size:13.5px;margin-top:10px}
+  .actiuni{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}
+  .actiuni button{border:0;border-radius:999px;padding:9px 18px;font-size:14.5px;
+        font-weight:700;cursor:pointer;transition:transform .06s}
+  .actiuni button:active{transform:scale(.97)}
+  .b-aproba{background:var(--teal);color:#fff}
+  .b-salveaza{background:var(--hartie);color:var(--navy);border:1px solid #C9BCA8 !important}
+  .b-respinge{background:var(--hartie);color:var(--gri);border:1px solid var(--linie) !important}
+  .b-retrage{background:#FBEEE8;color:var(--coral);border:1px solid #F0C9B8 !important}
+  .b-resync{margin-top:8px;border:0;background:none;color:var(--teal);font-size:13px;
+        font-weight:600;cursor:pointer;padding:0;text-decoration:underline}
+  .mesaj{font-size:13.5px;color:var(--teal);font-weight:600}
+  .mesaj.rau{color:#B02020}
+  .gol{padding:60px 20px;text-align:center;color:var(--gri)}
+  @media(max-width:600px){
+    .post{flex-direction:column}
+    .poza,.fara-poza{width:100%;flex:none}
+    .poza img{width:min(100%,240px)}
+    .bara{top:86px}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Postări MyHistamate</h1>
+  <p>Nimic nu se publică fără <strong>Aprobă</strong>. Editezi textul direct în casetă, apoi salvezi sau aprobi.</p>
+</header>
+
+<div class="bara" id="filtre"></div>
+
+<main>
+  <div class="stare-globala" id="stare">Se încarcă postările…</div>
+  <div id="lista"></div>
+</main>
+
+<script>
+const API   = 'https://vooltkswkdxsmbbzgmzd.supabase.co/functions/v1/social-review';
+const CHEIE = '7ff77cb75f2e4f72ac138f9e55802364c35e3bc5002c4269bd406004b91d1e9e';
+
+const ETICHETE = { draft:'de aprobat', approved:'aprobată', published:'publicată',
+                   failed:'eșuată', skipped:'respinsă' };
+const FILTRE = [ ['draft','De aprobat'], ['approved','Aprobate'], ['published','Publicate'],
+                 ['skipped','Respinse'], ['failed','Eșuate'], ['toate','Toate'] ];
+
+let postari = [];
+let filtruActiv = 'draft';
+
+const $ = (s, el=document) => el.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;')
+                                  .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function dataRo(iso){
+  try{
+    return new Date(iso).toLocaleString('ro-RO',{ timeZone:'Europe/Bucharest',
+      weekday:'long', day:'numeric', month:'long', hour:'2-digit', minute:'2-digit' });
+  }catch(e){ return iso; }
+}
+
+// Hashtag-urile de la finalul variantei de Instagram (liniile care încep cu #).
+function tagsDin(ig){
+  const linii = String(ig ?? '').split(/\r?\n/);
+  const t = [];
+  for (let i = linii.length - 1; i >= 0; i--) {
+    const s = linii[i].trim();
+    if (!s) { if (t.length) break; else continue; }
+    if (s.startsWith('#')) t.unshift(s); else break;
+  }
+  return t.join('\n');
+}
+
+// Instagram = textul de Facebook fără linia cu 🔗, plus hashtag-urile existente.
+function deriveIG(fbText, igCurent){
+  const fara = String(fbText ?? '').split(/\r?\n/).filter(l => !l.trim().startsWith('🔗'));
+  while (fara.length && !fara[fara.length - 1].trim()) fara.pop();
+  const tags = tagsDin(igCurent);
+  return fara.join('\n') + (tags ? '\n\n' + tags : '');
+}
+
+function deseneazaFiltre(){
+  const n = (s) => postari.filter(p => p.status === s).length;
+  $('#filtre').innerHTML = FILTRE.map(([cod,nume]) => {
+    const cate = cod === 'toate' ? postari.length : n(cod);
+    if (!cate && cod !== 'toate' && cod !== filtruActiv) return '';
+    return `<button data-f="${cod}" class="${cod===filtruActiv?'activ':''}">${nume} (${cate})</button>`;
+  }).join('') +
+  `<span class="spacer"></span><button class="reincarca" data-f="__reload">↻ Reîncarcă</button>`;
+  $('#filtre').querySelectorAll('button').forEach(b => {
+    b.onclick = () => {
+      if (b.dataset.f === '__reload') return incarca();
+      filtruActiv = b.dataset.f;
+      deseneazaFiltre(); deseneazaLista();
+    };
+  });
+}
+
+function cardHTML(p){
+  return `
+  <article class="post" data-id="${p.id}">
+    <div class="poza">${p.image_url
+      ? `<img loading="lazy" src="${esc(p.image_url)}" alt="cardul postării ${p.post_no}">`
+      : `<div class="fara-poza">fără imagine</div>`}</div>
+    <div class="corp">
+      <div class="meta">
+        <span class="nr">#${p.post_no}</span>
+        <span class="cand">${esc(dataRo(p.scheduled_at))}</span>
+        <span class="chip ${p.status}">${ETICHETE[p.status] ?? p.status}</span>
+      </div>
+      <h2>${esc(p.title ?? '')}</h2>
+      <label>Textul postării (Facebook)</label>
+      <textarea class="fb" rows="7">${esc(p.caption_fb ?? '')}</textarea>
+      <details>
+        <summary>Varianta Instagram — se rescrie singură după textul Facebook</summary>
+        <textarea class="ig" rows="7">${esc(p.caption_ig ?? '')}</textarea>
+        <button class="b-resync" type="button">↻ Refă varianta Instagram din textul Facebook</button>
+      </details>
+      ${p.last_error ? `<div class="eroare-post">${esc(p.last_error)}</div>` : ''}
+      ${p.status === 'published'
+        ? `<div class="actiuni"><span class="mesaj">Publicată — nu se mai poate modifica.</span></div>`
+        : `<div class="actiuni">
+             ${p.status !== 'approved' ? `<button class="b-aproba">Aprobă</button>` : ''}
+             <button class="b-salveaza">Salvează textul</button>
+             ${p.status !== 'skipped' ? `<button class="b-respinge">Nu publica</button>` : ''}
+             ${p.status !== 'draft' ? `<button class="b-retrage">↩ Înapoi la „de aprobat”</button>` : ''}
+             <span class="mesaj"></span>
+           </div>`}
+    </div>
+  </article>`;
+}
+
+function deseneazaLista(){
+  const vizibile = postari.filter(p => filtruActiv === 'toate' || p.status === filtruActiv);
+  $('#stare').textContent = vizibile.length
+    ? ({draft:'Postări care așteaptă decizia ta. Ordinea = ordinea din calendar.',
+        approved:'Acestea vor pleca singure la data programată.',
+        published:'Deja publicate pe pagini.',
+        skipped:'Respinse de tine — nu se publică.',
+        failed:'Au întâmpinat o eroare la publicare — vezi detaliul roșu.',
+        toate:'Tot calendarul, în ordine.'}[filtruActiv] ?? '')
+    : '';
+  $('#lista').innerHTML = vizibile.length
+    ? vizibile.map(cardHTML).join('')
+    : `<div class="gol">Nimic aici deocamdată.</div>`;
+
+  $('#lista').querySelectorAll('.post').forEach(card => {
+    const id = Number(card.dataset.id);
+    const leaga = (sel, actiune) => {
+      const b = $(sel, card);
+      if (b) b.onclick = () => trimite(card, id, actiune);
+    };
+    leaga('.b-aproba', 'approve');
+    leaga('.b-salveaza', 'save');
+    leaga('.b-respinge', 'reject');
+    leaga('.b-retrage', 'unapprove');
+
+    // Sincronizare FB → IG: cât timp nu ai editat manual varianta de Instagram,
+    // ea se rescrie singură după textul de Facebook (hashtag-urile rămân).
+    const fbBox = $('.fb', card), igBox = $('.ig', card);
+    if (fbBox && igBox) {
+      fbBox.addEventListener('input', () => {
+        if (card.dataset.igManual === '1') return;
+        igBox.value = deriveIG(fbBox.value, igBox.value);
+      });
+      igBox.addEventListener('input', () => { card.dataset.igManual = '1'; });
+      const resync = $('.b-resync', card);
+      if (resync) resync.onclick = () => {
+        card.dataset.igManual = '';
+        igBox.value = deriveIG(fbBox.value, igBox.value);
+      };
+    }
+  });
+}
+
+async function trimite(card, id, actiune){
+  const msg = $('.mesaj', card);
+  msg.classList.remove('rau');
+  msg.textContent = 'se salvează…';
+  card.querySelectorAll('button').forEach(b => b.disabled = true);
+  try{
+    const r = await fetch(`${API}?k=${encodeURIComponent(CHEIE)}`, {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        id, action: actiune,
+        caption_fb: $('.fb', card).value,
+        caption_ig: $('.ig', card).value,
+      }),
+    });
+    const d = await r.json();
+    if (!r.ok || d.error) throw new Error(d.error || ('eroare ' + r.status));
+    const p = postari.find(x => x.id === id);
+    p.status = d.status;
+    p.caption_fb = $('.fb', card).value;
+    p.caption_ig = $('.ig', card).value;
+    msg.textContent = actiune === 'save' ? 'text salvat ✓' : (d.eticheta + ' ✓');
+    setTimeout(() => { deseneazaFiltre(); deseneazaLista(); }, 650);
+  }catch(e){
+    msg.classList.add('rau');
+    msg.textContent = 'nu s-a putut: ' + e.message;
+    card.querySelectorAll('button').forEach(b => b.disabled = false);
+  }
+}
+
+async function incarca(){
+  $('#stare').textContent = 'Se încarcă postările…';
+  try{
+    const r = await fetch(`${API}?k=${encodeURIComponent(CHEIE)}`);
+    const d = await r.json();
+    if (!r.ok || d.error) throw new Error(d.error || ('eroare ' + r.status));
+    postari = d.postari;
+    deseneazaFiltre(); deseneazaLista();
+  }catch(e){
+    $('#stare').textContent = 'Nu pot încărca postările: ' + e.message +
+      ' — verifică internetul și dă „Reîncarcă".';
+  }
+}
+
+incarca();
+</script>
+</body>
+</html>
